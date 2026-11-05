@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /donation/
+Disallow: /assets/data/
+Disallow: /docs/
+
+Sitemap: https://eldercarepakistan.org/sitemap.xml

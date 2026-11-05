@@ -1,0 +1,6 @@
+source,target,status,notes
+/Donate-Now%20-%20Copy.html,/Donate-Now1.html,301,Duplicate donation-page copy; use only if redirects are enabled on hosting.
+/donate/,/Donate-Now1.html,200 alias,Optional clean-route alias if Apache rewrite rules are added later.
+/contact/,/Contact-Us.html,200 alias,Optional clean-route alias if Apache rewrite rules are added later.
+/about/,/About-Us.html,200 alias,Optional clean-route alias if Apache rewrite rules are added later.
+/our-work/medical-support/,/Doctor-Consultation.html,200 alias,Optional grouped route for medical-support pages if a clean-route build is created later.
