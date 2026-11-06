@@ -44,7 +44,7 @@ export function renderCarePage() {
       h('link', { rel: 'manifest', href: '/site.webmanifest' }),
       h('link', { rel: 'stylesheet', href: '/assets/css/care-support.css' }),
       h('link', { rel: 'stylesheet', href: '/assets/css/site-refinements.css' }),
-      ...Object.entries({ type: 'website', title, description, url, image: origin + '/og-image.jpg' }).map(([name, content]) => h('meta', { property: 'og:' + name, content })),
+      ...Object.entries({ type: 'website', title, description, url, image: origin + '/assets/img/about/elder-care-pakistan-social.jpg' }).map(([name, content]) => h('meta', { property: 'og:' + name, content })),
       h('meta', { name: 'twitter:card', content: 'summary_large_image' }),
       h('script', { type: 'application/ld+json', dangerouslySetInnerHTML: { __html: JSON.stringify(schema).replaceAll('<', '\\u003c') } }),
     ),
