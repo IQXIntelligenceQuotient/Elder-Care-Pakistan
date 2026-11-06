@@ -51,6 +51,7 @@ for (const file of ['robots.txt', 'sitemap-index.xml', 'image-sitemap.xml', 'llm
   assert(existsSync('dist/' + file), file)
 }
 assert.match(await readFile('dist/image-sitemap.xml', 'utf8'), /xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1"/)
-assert.deepEqual((await readdir('dist')).filter((name) => name.endsWith('.php')), ['contact.php'])
+assert.deepEqual((await readdir('dist')).filter((name) => name.endsWith('.php')).sort(),
+  ['Exception.php', 'PHPMailer.php', 'SMTP.php', 'contact.php'].sort())
 assert.match(await readFile('dist/Contact-Us.html', 'utf8'), /action="\/contact\.php" method="post"/)
 console.log('Verified ' + routes.length + ' static HTML routes and discovery files.')

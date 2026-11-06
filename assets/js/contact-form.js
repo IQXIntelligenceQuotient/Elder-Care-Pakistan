@@ -16,7 +16,7 @@ form.addEventListener('submit', async (event) => {
     });
     const result = await response.json();
     status.textContent = result.message;
-    if (response.ok) form.reset();
+    if (response.status === 202 && result.accepted === true) form.reset();
   } catch {
     status.textContent = 'We could not confirm submission. Please contact us by email or WhatsApp.';
   } finally {

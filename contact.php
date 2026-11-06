@@ -1,6 +1,9 @@
 <?php
 declare(strict_types=1);
 
+use PHPMailer\PHPMailer\Exception as MailException;
+use PHPMailer\PHPMailer\PHPMailer;
+
 header('Cache-Control: no-store');
 header('X-Robots-Tag: noindex');
 header('X-Content-Type-Options: nosniff');
@@ -10,7 +13,7 @@ function respond(int $status, string $message): never
     http_response_code($status);
     if (str_contains($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json')) {
         header('Content-Type: application/json; charset=utf-8');
-        echo json_encode(['message' => $message], JSON_THROW_ON_ERROR);
+        echo json_encode(['accepted' => $status === 202, 'message' => $message], JSON_THROW_ON_ERROR);
     } else {
         header('Content-Type: text/html; charset=utf-8');
         $safe = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
@@ -92,18 +95,47 @@ if (preg_match('/[\r\n]/', $email) || !filter_var($email, FILTER_VALIDATE_EMAIL)
     respond(422, 'Enter a valid email address so we can reply.');
 }
 
+$configPath = dirname(__DIR__) . '/eldercare-contact-smtp.ini';
+$config = @parse_ini_file($configPath, false, INI_SCANNER_RAW);
+$host = $config['host'] ?? '';
+$username = $config['username'] ?? '';
+$password = $config['password'] ?? '';
+$port = (int) ($config['port'] ?? 465);
+if (!filter_var($host, FILTER_VALIDATE_DOMAIN, FILTER_FLAG_HOSTNAME)
+    || !filter_var($username, FILTER_VALIDATE_EMAIL)
+    || $password === '' || !in_array($port, [465, 587], true)
+    || !extension_loaded('openssl')) {
+    error_log('Elder Care Pakistan contact form: SMTP is not configured.');
+    respond(503, 'The contact form is temporarily unavailable. Please use email or WhatsApp.');
+}
+
 takeRateLimitSlot();
 
-$body = "Name: $name\r\nEmail: $email\r\nPhone: $phone\r\nCity: $city\r\n\r\n$message";
-$headers = [
-    'From' => 'info@eldercarepakistan.org',
-    'Reply-To' => $email,
-    'MIME-Version' => '1.0',
-    'Content-Type' => 'text/plain; charset=UTF-8',
-    'Content-Transfer-Encoding' => 'base64',
-];
-if (!@mail('eldercarepakistan@gmail.com', 'Website contact inquiry', chunk_split(base64_encode($body)), $headers)) {
-    error_log('Elder Care Pakistan contact form: mail transport rejected a message.');
+require_once __DIR__ . '/Exception.php';
+require_once __DIR__ . '/PHPMailer.php';
+require_once __DIR__ . '/SMTP.php';
+
+$mailer = new PHPMailer(true);
+$mailer->isSMTP();
+$mailer->Host = $host;
+$mailer->Port = $port;
+$mailer->SMTPSecure = $port === 465 ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
+$mailer->SMTPAuth = true;
+$mailer->Username = $username;
+$mailer->Password = $password;
+$mailer->Timeout = 10;
+$mailer->CharSet = PHPMailer::CHARSET_UTF8;
+$mailer->Subject = 'Website contact inquiry';
+$mailer->Body = "Name: $name\r\nEmail: $email\r\nPhone: $phone\r\nCity: $city\r\n\r\n$message";
+
+try {
+    $mailer->setFrom($username, 'Elder Care Pakistan');
+    $mailer->addAddress('eldercarepakistan@gmail.com');
+    $mailer->addReplyTo($email);
+    $mailer->send();
+} catch (MailException $exception) {
+    $smtpCode = $mailer->getSMTPInstance()->getError()['smtp_code'] ?? '';
+    error_log('Elder Care Pakistan contact form: SMTP failed (code ' . (int) $smtpCode . ').');
     respond(503, 'We could not send your message. Please try again later or use email or WhatsApp.');
 }
-respond(200, 'Thank you. Your message was submitted for delivery.');
+respond(202, 'Thank you. Our mail server accepted your message for delivery.');

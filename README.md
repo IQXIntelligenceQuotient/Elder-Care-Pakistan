@@ -24,8 +24,19 @@ Deploy the contents of `dist/` to the site document root, including the hidden `
 
 Remove old PHP files from any previous deployment and deploy the new `contact.php` from `dist/`. Rotate or revoke the previously committed SMTP credential in the provider account and review access logs.
 
-The contact form posts to `/contact.php` and needs PHP 8.1 or later with an enabled host mail transport. Confirm the hosting account can send as `info@eldercarepakistan.org` and that the receiving inbox is `eldercarepakistan@gmail.com`. The handler uses the visitor's address only for replies. No SMTP credentials are required in the source. PHP accepting the message means it was submitted for delivery. Confirm receipt in the inbox and spam folder after deployment.
+The contact form requires PHP 8.1 or later with OpenSSL. It uses authenticated SMTP and sends to `eldercarepakistan@gmail.com`. The authenticated mailbox is the sender, and the visitor’s address is used for replies.
 
-Vite serves the website preview. To test the PHP form locally after building, run `php -S 127.0.0.1:8080 -t dist` with a local test mail transport configured. The international giving form still prepares an email draft.
+On the host, create `eldercare-contact-smtp.ini` **one directory above** the website document root. For example, if the site is deployed in `public_html`, put the file beside that directory. Use the mail provider’s settings and an authorized mailbox. For Hostinger Email:
+
+```ini
+host = smtp.hostinger.com
+port = 465
+username = info@eldercarepakistan.org
+password = "REPLACE_WITH_MAILBOX_PASSWORD"
+```
+
+Restrict the file to the hosting account and keep it outside Git and the web root. Port 465 uses implicit TLS and port 587 uses STARTTLS. If SMTP is unconfigured or rejects the message, the form returns `503` and keeps the entered text in the browser. A `202` means the SMTP server accepted the message for delivery. Verify arrival in Gmail after deployment.
+
+Vite serves the website preview. To exercise the PHP endpoint locally after building, use `php -S 127.0.0.1:8080 -t dist` with a local test SMTP service. The international giving form still prepares an email draft.
 
 After deployment, check the homepage and care hub with JavaScript disabled, verify the sitemap files on the production domain, and test the hosting edge with verified crawler requests.
