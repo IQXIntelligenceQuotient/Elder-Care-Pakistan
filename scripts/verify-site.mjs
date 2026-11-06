@@ -6,6 +6,8 @@ import { origin } from '../src/care-page.mjs'
 
 const sitemap = await readFile('dist/sitemap.xml', 'utf8')
 const routes = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => new URL(match[1]))
+assert.equal(new Set(routes.map((route) => route.href)).size, routes.length, 'Duplicate sitemap routes')
+assert.equal(await readFile('care-support.html', 'utf8'), await readFile('dist/care-support.html', 'utf8'))
 const pageIds = new Map()
 const fragmentLinks = []
 assert(routes.length >= 23, 'Expected the existing public pages and the care hub')

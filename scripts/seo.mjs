@@ -8,7 +8,7 @@ const sitemapNs = 'http://www.sitemaps.org/schemas/sitemap/0.9'
 const releaseLastModified = '2026-11-06'
 const xml = '<?xml version="1.0" encoding="UTF-8"?>'
 const escape = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
-const htmlFiles = (await readdir('.')).filter((file) => file.endsWith('.html') && !['404.html', 'Donate-Now - Copy.html'].includes(file))
+const htmlFiles = (await readdir('.')).filter((file) => file.endsWith('.html') && !['404.html', 'Donate-Now - Copy.html', 'care-support.html'].includes(file))
 const pages = await Promise.all(htmlFiles.map(async (file) => [file, await readFile(file, 'utf8')]))
 pages.push(['care-support.html', renderCarePage()])
 pages.sort(([a], [b]) => a === 'index.html' ? -1 : b === 'index.html' ? 1 : a.localeCompare(b))

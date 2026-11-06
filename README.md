@@ -16,6 +16,8 @@ npm run preview
 
 The production build creates `dist/` and checks public HTML, canonicals, FAQs, structured data, local links, and discovery files. The `generate:sitemap`, `generate:image-sitemap`, and `generate:llms` scripts can regenerate individual outputs.
 
+The build refreshes the generated `care-support.html` at the repository root for static previews. Edit `src/care-page.mjs` and rerun the build to change that page.
+
 ## Apache deployment
 
 Deploy the contents of `dist/` to the site document root, including the hidden `.htaccess`. The included rules require Apache rewrite and header modules and appropriate override permissions. Confirm the legacy donation URL, `/index.html`, and the www hostname redirect as intended. Verify that a missing route returns HTTP 404 with the custom error page.

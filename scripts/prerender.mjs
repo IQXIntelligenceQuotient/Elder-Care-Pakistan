@@ -4,6 +4,9 @@ import { renderCarePage } from '../src/care-page.mjs'
 
 const project = new URL('../', import.meta.url)
 process.chdir(fileURLToPath(project))
+// Serve the same generated HTML from the repository root and the deploy folder.
+const carePage = 'care-support.html'
+await writeFile(carePage, renderCarePage() + '\n', 'utf8')
 await rm(new URL('dist/', project), { recursive: true, force: true })
 await mkdir('dist')
 await Promise.all([
@@ -12,5 +15,4 @@ await Promise.all([
   ...['.htaccess', 'robots.txt', 'contact.php'].map((name) => cp(name, 'dist/' + name)),
   ...(await readdir('.')).filter((name) => name.endsWith('.html') && name !== 'Donate-Now - Copy.html')
     .map((name) => cp(name, 'dist/' + name)),
-  writeFile('dist/care-support.html', renderCarePage(), 'utf8'),
 ])
