@@ -12,7 +12,7 @@
 :focus-visible { outline: 3px solid #126954; outline-offset: 3px; }
 .navbar-area .menu.toggle-btn { min-width: 44px; min-height: 44px; }
 .navbar-area a[href^="tel:"], .navbar-top a[href^="tel:"] { color: inherit; text-decoration: underline; }
-.ecp-donate-trigger, .wa-fab { display: none !important; }
+.ecp-donate-trigger { display: none !important; }
 .ecp-directions { padding: 1rem; text-align: center; }
 .ecp-directions a { text-decoration: underline; }
 dialog.ecp-qr-lightbox[open] {
