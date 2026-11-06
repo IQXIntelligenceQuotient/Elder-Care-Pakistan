@@ -1,0 +1,6 @@
+Elder Care Pakistan
+Organisation: Elder Care Pakistan
+Contact: https://eldercarepakistan.org/Contact-Us.html
+
+Developer note: Public pages are delivered as readable HTML.
+Technology: HTML, CSS, JavaScript, Vite, React DOM Server.

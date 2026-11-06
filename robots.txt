@@ -1,8 +1,14 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /private/
+Disallow: /test/
+Disallow: /staging/
+Disallow: /drafts/
 Disallow: /donation/
 Disallow: /assets/data/
 Disallow: /docs/
 
+Sitemap: https://eldercarepakistan.org/sitemap-index.xml
 Sitemap: https://eldercarepakistan.org/sitemap.xml
+Sitemap: https://eldercarepakistan.org/image-sitemap.xml

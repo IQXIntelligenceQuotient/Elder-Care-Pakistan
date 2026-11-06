@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260">
+  <defs>
+    <pattern id="blocks" width="105" height="82" patternUnits="userSpaceOnUse" patternTransform="rotate(17)">
+      <path fill="#e9e5df" d="M0 0h105v82H0z"/>
+      <path fill="none" stroke="#faf8f4" stroke-width="5" d="M0 0h105M0 41h105M0 82h105M22 0v41m29 0v41M81 0v82"/>
+      <path fill="#c4dba9" d="M55 47h22v30H55z"/>
+    </pattern>
+  </defs>
+  <path fill="url(#blocks)" d="M0 0h720v260H0z"/>
+  <path fill="#c4dba9" stroke="#faf8f4" stroke-width="5" d="m435 0-22 55 62 32 67-33-17-54Z"/>
+  <path fill="none" stroke="#f8f6f1" stroke-width="26" d="M493 274c31-48 108-53 135-112s46-90 104-107"/>
+  <path fill="none" stroke="#a8cce2" stroke-width="16" d="M493 274c31-48 108-53 135-112s46-90 104-107"/>
+  <g fill="none" stroke-linejoin="round">
+    <path stroke="#fffaf0" stroke-width="15" d="m-15 25 278 96 140 48 113 100M330-15l-68 136-53 150M-20 241l210-69 73-51m140 48 57-59 128-43 148-28"/>
+    <path stroke="#f5d68b" stroke-width="8" d="m-15 25 278 96 140 48 113 100M330-15l-68 136-53 150M-20 241l210-69 73-51m140 48 57-59 128-43 148-28"/>
+  </g>
+  <ellipse cx="346" cy="155" rx="18" ry="5" fill="#173f39" opacity=".2"/>
+  <path fill="#074533" d="M346 98a20 20 0 0 0-20 20c0 11 20 37 20 37s20-26 20-37a20 20 0 0 0-20-20Z"/>
+  <circle cx="346" cy="118" r="8" fill="#fffaf0"/>
+</svg>

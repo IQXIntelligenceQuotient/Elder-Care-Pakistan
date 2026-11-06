@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-PK">
 
 <head>
@@ -14,13 +14,13 @@
     <meta property="og:title" content="Elder Care Pakistan | Care and Support for Older People">
     <meta property="og:description" content="Elder Care Pakistan supports older people and families through home-based care, medical assistance, mobility support, essential services, and safe donation routes.">
     <meta property="og:url" content="https://eldercarepakistan.org/">
-    <meta property="og:image" content="https://eldercarepakistan.org/assets/img/about/elderly%20care%20in%20Pakistan.png">
+    <meta property="og:image" content="https://eldercarepakistan.org/og-image.jpg">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": "NGO",
       "@id": "https://eldercarepakistan.org/#organization",
       "name": "Elder Care Pakistan",
       "url": "https://eldercarepakistan.org/",
@@ -31,8 +31,45 @@
       },
       "telephone": "+92 321 427 7856",
       "sameAs": [
-        "https://www.facebook.com/ElderCarePakistan/"
-      ]
+        "https://www.facebook.com/ElderCarePakistan/",
+        "https://pk.linkedin.com/in/elder-care-pakistan-71032b4a"
+      ],
+      "slogan": "Supporting older people with dignity, care and compassion",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Pakistan"
+        },
+        {
+          "@type": "City",
+          "name": "Lahore"
+        }
+      ],
+      "knowsAbout": [
+        "elder care in Pakistan",
+        "elder care in Pakistan",
+        "senior home care",
+        "mobility aids for elders",
+        "medical support for older people",
+        "donations for elderly care"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+923214277856",
+        "contactType": "donor support",
+        "areaServed": "PK",
+        "availableLanguage": [
+          "en",
+          "ur"
+        ]
+      },
+      "potentialAction": {
+        "@type": "DonateAction",
+        "target": "https://eldercarepakistan.org/Donate-Now1.html",
+        "recipient": {
+          "@id": "https://eldercarepakistan.org/#organization"
+        }
+      }
     },
     {
       "@type": "WebSite",
@@ -72,6 +109,63 @@
           "item": "https://eldercarepakistan.org/"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://eldercarepakistan.org/#donor-faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can I donate to Elder Care Pakistan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can use the Donate Now page, scan the official QR code, or contact the team on WhatsApp for verified donation guidance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does my donation support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Donations can support elder medical needs, mobility aids, home-care coordination, safety items, daily essentials, and community support programmes in Pakistan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is donation confirmation handled?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Donation confirmation is issued after funds are credited and reconciled through the authorised organisational channel."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eldercarepakistan.org/#faiz-alam-faizi",
+      "name": "Faiz Alam Faizi",
+      "jobTitle": "Founder",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Elder Care Pakistan",
+        "url": "https://eldercarepakistan.org/"
+      },
+      "image": "https://eldercarepakistan.org/assets/img/about/Faiz%20Alam%20Faizi.jpg",
+      "url": "https://eldercarepakistan.org/About-Us.html"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://eldercarepakistan.org/#m-imran-khan-rana",
+      "name": "M. Imran Khan Rana",
+      "jobTitle": "Executive Director",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Elder Care Pakistan",
+        "url": "https://eldercarepakistan.org/"
+      },
+      "image": "https://eldercarepakistan.org/assets/img/about/Muhammad%20Imran%20Khan%20Rana.jpg",
+      "url": "https://eldercarepakistan.org/About-Us.html"
     }
   ]
 }
@@ -248,161 +342,6 @@
       }
     </style>
 
-<style id="ecp-sticky-qr-donate-styles">
-  .ecp-sticky-qr-donate {
-    position: fixed;
-    right: 18px;
-    bottom: 92px;
-    z-index: 9998;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    max-width: calc(100vw - 36px);
-    padding: 8px;
-    border: 1px solid rgba(23, 63, 57, .16);
-    border-radius: 14px;
-    background: #fff;
-    box-shadow: 0 14px 34px rgba(22, 39, 34, .22);
-  }
-
-  .ecp-sticky-qr-donate__qr {
-    width: 56px;
-    height: 56px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px;
-    border: 1px solid #eadfca;
-    border-radius: 10px;
-    background: #fff;
-    cursor: zoom-in;
-    flex: 0 0 auto;
-  }
-
-  .ecp-sticky-qr-donate__qr img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-  }
-
-  .ecp-sticky-qr-donate__cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: 0 16px;
-    border-radius: 10px;
-    background: #173f39;
-    color: #fff !important;
-    font-size: 14px;
-    font-weight: 800;
-    line-height: 1;
-    text-decoration: none !important;
-    white-space: nowrap;
-    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .12);
-  }
-
-  .ecp-sticky-qr-donate__cta:hover,
-  .ecp-sticky-qr-donate__cta:focus {
-    background: #d7a23a;
-    color: #173f39 !important;
-  }
-
-  .ecp-sticky-qr-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 100000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    background: rgba(12, 24, 20, .78);
-  }
-
-  .ecp-sticky-qr-lightbox.is-open {
-    display: flex;
-  }
-
-  .ecp-sticky-qr-lightbox__panel {
-    position: relative;
-    max-width: min(92vw, 430px);
-    width: 100%;
-    padding: 22px;
-    border-radius: 16px;
-    background: #fff;
-    color: #20332d;
-    text-align: center;
-    box-shadow: 0 22px 70px rgba(0, 0, 0, .35);
-  }
-
-  .ecp-sticky-qr-lightbox__panel img {
-    width: min(76vw, 320px);
-    height: auto;
-    border: 1px solid #eadfca;
-    border-radius: 12px;
-    background: #fff;
-  }
-
-  .ecp-sticky-qr-lightbox__panel p {
-    margin: 14px 0 0;
-    color: #42554f;
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
-  .ecp-sticky-qr-lightbox__close {
-    position: absolute;
-    top: -12px;
-    right: -12px;
-    width: 36px;
-    height: 36px;
-    border: 0;
-    border-radius: 50%;
-    background: #173f39;
-    color: #fff;
-    font-size: 24px;
-    line-height: 1;
-    cursor: pointer;
-  }
-
-  .ecp-email-status {
-    margin: 12px 0 0;
-    color: #173f39;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .ecp-email-status a {
-    color: #173f39;
-    font-weight: 800;
-    text-decoration: underline;
-  }
-
-  @media (max-width: 575px) {
-    .ecp-sticky-qr-donate {
-      left: 12px;
-      right: 12px;
-      bottom: 76px;
-      justify-content: center;
-      padding: 7px;
-    }
-
-    .ecp-sticky-qr-donate__qr {
-      width: 52px;
-      height: 52px;
-    }
-
-    .ecp-sticky-qr-donate__cta {
-      flex: 1 1 auto;
-      min-width: 0;
-      padding: 0 12px;
-      white-space: normal;
-      text-align: center;
-    }
-  }
-</style>
-
 <style id="ecp-aeo-donor-styles">
   .ecp-aeo-donor-section {
     padding: 58px 0;
@@ -520,101 +459,14 @@
     }
   }
 </style>
-<script type="application/ld+json" id="ecp-aeo-schema">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "NGO",
-      "@id": "https://eldercarepakistan.org/#organization",
-      "name": "Elder Care Pakistan",
-      "url": "https://eldercarepakistan.org/",
-      "slogan": "Supporting older people with dignity, care and compassion",
-      "areaServed": [
-        {
-          "@type": "Country",
-          "name": "Pakistan"
-        },
-        {
-          "@type": "City",
-          "name": "Lahore"
-        }
-      ],
-      "knowsAbout": [
-        "elder care in Pakistan",
-        "elder care in Pakistan",
-        "senior home care",
-        "mobility aids for elders",
-        "medical support for older people",
-        "donations for elderly care"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+923214277856",
-        "contactType": "donor support",
-        "areaServed": "PK",
-        "availableLanguage": [
-          "en",
-          "ur"
-        ]
-      },
-      "potentialAction": {
-        "@type": "DonateAction",
-        "target": "https://eldercarepakistan.org/Donate-Now1.html",
-        "recipient": {
-          "@id": "https://eldercarepakistan.org/#organization"
-        }
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://eldercarepakistan.org/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://eldercarepakistan.org/"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://eldercarepakistan.org/#donor-faq",
-      "inLanguage": "en",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How can I donate to Elder Care Pakistan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can use the Donate Now page, scan the official QR code, or contact the team on WhatsApp for verified donation guidance."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does my donation support?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Donations can support elder medical needs, mobility aids, home-care coordination, safety items, daily essentials, and community support programmes in Pakistan."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How is donation confirmation handled?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Donation confirmation is issued after funds are credited and reconciled through the authorised organisational channel."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/site-refinements.css">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class='sc5'>
+<body class='sc5' id="top">
+<a class="ecp-skip-link" href="#main-content">Skip to main content</a>
 
    
 
@@ -641,7 +493,7 @@
                 <ul class="topbar-right">
                     <li class="social-area">
                         <span>Follow Us - </span>
-                        <a href="https://www.facebook.com/ElderCarePakistan"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/ElderCarePakistan" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     </li>
                 </ul>
             </div>
@@ -651,42 +503,41 @@
         <div class="container nav-container navbar-bg">
             <div class="responsive-mobile-menu">
                 <button class="menu toggle-btn d-block d-lg-none" data-target="#Iitechie_main_menu"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    aria-expanded="false" aria-controls="Iitechie_main_menu" aria-label="Toggle navigation">
                     <span class="icon-left"></span>
                     <span class="icon-right"></span>
                 </button>
             </div>
             <div class="logo">
-                <a href="index.html"><img src="assets/img/logos/logo.png" alt="Elder Care Pakistan"></a>
+                <a href="/"><img src="assets/img/logos/logo.png" alt="Elder Care Pakistan" width="177" height="50"></a>
             </div>
             <div class="nav-right-part nav-right-part-mobile">
-                <a class="search-bar-btn" href="#" aria-label="Open search">
-                    <i class="flaticon-magnifying-glass"></i>
-                </a>
+
             </div>
             <div class="collapse navbar-collapse" id="Iitechie_main_menu">
                 <ul class="navbar-nav menu-open text-lg-end">
-                    <li class="active"><a href="index.html" aria-current="page">Home</a></li>
+                    <li class="active"><a href="/" aria-current="page">Home</a></li>
                     <li><a href="About-Us.html">About Us</a></li>
-                    <li><a href="Donate-Now1.html">Donate Now</a></li>
+
                     <li class="menu-item-has-children">
-                        <a href="#" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <a href="#" aria-haspopup="true" aria-expanded="false">Care Services</a>
                         <ul class="sub-menu">
+                            <li><a href="/care-support.html">Care support overview</a></li>
                             <li><a href="Doctor-Consultation.html">Doctor Consultation</a></li>
                             <li><a href="Physiotherapy-at-Home.html">Physiotherapy at Home</a></li>
-                            <li><a href="Dialysis-at-Home.html">Dialysis at Home</a></li>
+                            <li><a href="Dialysis-at-Home.html">Dialysis referral support</a></li>
                             <li><a href="Nurse-at-Home.html">Nurse at Home</a></li>
                             <li><a href="Lab-Test.html">Lab Test</a></li>
                             <li><a href="Covid-Care.html">Health Support</a></li>
-                            <li><a href="free-eye-camp-for-elders.html">Free Eye Camp</a></li>
+
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="#" aria-haspopup="true" aria-expanded="false">Giving</a>
+                        <a href="#" aria-haspopup="true" aria-expanded="false">Ways to Give</a>
                         <ul class="sub-menu">
-                            <li><a href="master-donation-hub.html">Donation Hub</a></li>
-                            <li><a href="Donate-Now.html">Donation Overview</a></li>
-                            <li><a href="Donate-Now1.html">Donation Details</a></li>
+                            <li><a href="master-donation-hub.html">Donation Hub</a></li>                            <li><a href="free-eye-camp-for-elders.html">Free Eye Camp</a></li>
+                            <li><a href="Donate-Now.html">Sponsor an item</a></li>
+                            <li><a href="Donate-Now1.html">Payment instructions</a></li>
                             <li><a href="donate-money.html">Donate Money</a></li>
                             <li><a href="donate-mobility-aids.html">Mobility Aids</a></li>
                             <li><a href="donate-assistive-devices.html">Assistive Devices</a></li>
@@ -702,19 +553,14 @@
                 </ul>
             </div>
             <div class="nav-right-part nav-right-part-desktop">
-                <a class="search-bar-btn" href="#" aria-label="Open search">
-                    <i class="flaticon-magnifying-glass"></i>
-                </a>
-                <div class="dropdown">
-                    <a class="dropdown-toggle" href="Contact-Us.html" aria-label="Contact Elder Care Pakistan">
-                        <i class="flaticon-user-1"></i>
-                    </a>
-                </div>
+
+
                 <a class="btn btn--style-two" href="Donate-Now1.html">Donate Now</a>
             </div>
         </div>
     </nav>
     <!-- navbar end -->
+<main id="main-content" tabindex="-1">
 
 
     <!-- =========================
@@ -727,48 +573,18 @@ Elder Care Pakistan
     <div class="ecp-hero-box">
 
       <div class="ecp-hero-content">
-        <span class="ecp-badge">Elder Care Pakistan</span>
-
-        <h1>Supporting Older People with Dignity, Care and Compassion</h1>
+        <h1>Care and support for older people in Pakistan</h1>
 
         <p>
-          Elder Care Pakistan supports older people and their families through home-based care, medical assistance, mobility support, essential services, and community-based programmes. Your contribution helps respond to verified needs with dignity and respect.
+          Find guidance on home care, medical support, and mobility aids, or help fund verified needs.
         </p>
 
         <div class="ecp-actions">
-          <a class="ecp-btn ecp-btn-primary" href="Donate-Now1.html">Donate Now</a>
-          <a class="ecp-btn ecp-btn-light" href="https://wa.me/923214277856?text=Assalamualaikum%2C%20I%20want%20to%20support%20Elder%20Care%20Pakistan.%20Please%20guide%20me.">
-            Sponsor an Elder
-          </a>
-        </div>
-
-        <div class="ecp-trust">
-          <span>Transparent Giving</span>
-          <span>Verified Bank Guidance</span>
-          <span>Bank Verification</span>
+          <a class="ecp-btn ecp-btn-primary" href="/care-support.html">Get Care Support</a>
+          <a class="ecp-btn ecp-btn-light" href="/master-donation-hub.html">Ways to Donate</a>
         </div>
       </div>
-
-      <aside class="ecp-donation-card">
-        <h3>Donate with Confidence</h3>
-        <p>Support verified elder care needs through official donation guidance.</p>
-
-        <ul>
-          <li><strong>Account Title:</strong> Elder Care Pakistan</li>
-          <li><strong>IBAN:</strong> Issued through verified instructions</li>
-          <li><strong>Bank:</strong> Faysal Bank Limited</li>
-        </ul>
-
-        <div class="ecp-qr-payment" aria-label="QR payment option">
-          <img class="ecp-qr-payment__image" src="assets/img/logos/receipt-1782140943666%20%281%29.png" alt="Elder Care Pakistan QR payment code ending 8326" loading="eager" decoding="async">
-          <div class="ecp-qr-payment__copy">
-            <strong>Scan to donate by QR payment</strong>
-            <p>Use this official QR only through your banking or wallet app. Click or tap the QR to enlarge. Keep the app reference; a donation is confirmed after funds are credited and reconciled.</p>
-          </div>
-        </div>
-
-        <a class="ecp-card-btn" href="Donate-Now1.html">View Donation Details</a>
-      </aside>
+      <img class="ecp-hero-photo" src="/assets/img/hero/hero-two.jpg" alt="Two people holding hands" fetchpriority="high" width="1920" height="803">
 
     </div>
   </div>
@@ -779,35 +595,35 @@ Elder Care Pakistan
 
     <div class="ecp-values-head">
       <span class="ecp-section-badge">Our Commitment</span>
-      <h2>Serving Older People with Respect, Care, and Humanity</h2>
-      <p>
-        Elder Care Pakistan works to support older people through practical care, medical coordination, mobility assistance, daily essentials, and community responsibility.
-      </p>
+      <h2>Serving older people with respect, care, and humanity</h2>
     </div>
 
     <div class="ecp-values-grid">
 
       <article class="ecp-value-card">
-        <div class="ecp-icon">Target</div>
-        <span class="ecp-number">01</span>
-        <h3>Vision</h3>
+        <div class="ecp-value-heading">
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M28 29 16 17a7 7 0 0 1 12-7 7 7 0 0 1 12 7L28 29ZM16 51v-7L5 34V23a3 3 0 0 1 6 0v8l9 8m3 12v-8l-9-10a3 3 0 0 0-4 4m30 14v-7l11-10V23a3 3 0 0 0-6 0v8l-9 8m-3 12v-8l9-10a3 3 0 0 1 4 4"/></svg>
+          <h3>Vision</h3>
+        </div>
         <p>A society where every elder lives with dignity, safety, respect, and compassion.</p>
         <a href="About-Us.html">Learn More</a>
       </article>
 
       <article class="ecp-value-card ecp-featured">
-        <div class="ecp-icon">Care</div>
-        <span class="ecp-number">02</span>
-        <h3>Mission</h3>
-        <p>To provide at-home medical care, rehabilitation, emotional support, and community assistance to seniors in need.</p>
+        <div class="ecp-value-heading">
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 27 25-22 25 22M9 22v28h38V22M28 24v16m-8-8h16"/></svg>
+          <h3>Mission</h3>
+        </div>
+        <p>At-home medical care, rehabilitation, emotional support, and community assistance for seniors in need.</p>
         <a href="Donate-Now1.html">Support the Mission</a>
       </article>
 
       <article class="ecp-value-card">
-        <div class="ecp-icon">Growth</div>
-        <span class="ecp-number">03</span>
-        <h3>Objectives</h3>
-        <p>To expand medical camps, train caregivers, provide mobility support, and enable safe independent living for elderly people.</p>
+        <div class="ecp-value-heading">
+          <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="18" y="4" width="20" height="10" rx="3"/><path d="M18 9H9a4 4 0 0 0-4 4v35a4 4 0 0 0 4 4h38a4 4 0 0 0 4-4V13a4 4 0 0 0-4-4h-9M13 25l3 3 6-7m-9 19 3 3 6-7m8-10h12m-12 15h12"/></svg>
+          <h3>Objectives</h3>
+        </div>
+        <p>Expand medical camps, train caregivers, provide mobility support, and enable safe independent living for older people.</p>
         <a href="Donate-Now1.html">Donate Now</a>
       </article>
 
@@ -1198,7 +1014,7 @@ Elder Care Pakistan
     <!-- Founder Message -->
     <article class="ecp-leader-card">
       <div class="ecp-leader-photo">
-        <img src="assets/img/about/about-three-right.jpg" alt="Compassionate care for seniors" loading="lazy">
+        <img src="assets/img/about/about-three-right.jpg" alt="Compassionate care for seniors" loading="lazy" width="652" height="587">
         <div class="ecp-photo-note">
           <strong>Founder's Vision</strong>
           <span>Care, dignity, and lifelong support for elders.</span>
@@ -1226,12 +1042,12 @@ Elder Care Pakistan
         </p>
 
         <div class="ecp-author-box">
-          <img src="assets/img/about/Faiz Alam Faizi.jpg" alt="Faiz Alam Faizi, Founder of Elder Care Pakistan">
+          <img src="assets/img/about/Faiz Alam Faizi.jpg" alt="Faiz Alam Faizi, Founder of Elder Care Pakistan" width="300" height="300">
           <div>
             <h4>Faiz Alam Faizi</h4>
             <span>Founder, Elder Care Pakistan</span>
           </div>
-          <img class="ecp-signature" src="assets/img/about/signature faiz alam faizi.png" alt="Signature of Faiz Alam Faizi" loading="lazy">
+          <img class="ecp-signature" src="assets/img/about/signature faiz alam faizi.png" alt="Signature of Faiz Alam Faizi" loading="lazy" width="154" height="61">
         </div>
 
         <div class="ecp-leader-actions">
@@ -1244,7 +1060,7 @@ Elder Care Pakistan
     <!-- Executive Director Message -->
     <article class="ecp-leader-card ecp-leader-card-alt">
       <div class="ecp-leader-photo">
-        <img src="assets/img/about/elderly care in Pakistan.png" alt="Elder care services in Pakistan" loading="lazy">
+        <img src="assets/img/about/elderly care in Pakistan.png" alt="Elder care services in Pakistan" loading="lazy" width="1080" height="1080">
         <div class="ecp-photo-note">
           <strong>Care in Action</strong>
           <span>Love, dignity, and practical support for seniors.</span>
@@ -1272,12 +1088,12 @@ Elder Care Pakistan
         </p>
 
         <div class="ecp-author-box">
-          <img src="assets/img/about/Muhammad Imran Khan Rana.jpg" alt="M. Imran Khan Rana, Executive Director of Elder Care Pakistan">
+          <img src="assets/img/about/Muhammad Imran Khan Rana.jpg" alt="M. Imran Khan Rana, Executive Director of Elder Care Pakistan" width="300" height="300">
           <div>
             <h4>M. Imran Khan Rana</h4>
             <span>Executive Director, Elder Care Pakistan</span>
           </div>
-          <img class="ecp-signature" src="assets/img/about/imran khan.png" alt="Signature of M. Imran Khan Rana" loading="lazy">
+          <img class="ecp-signature" src="assets/img/about/imran khan.png" alt="Signature of M. Imran Khan Rana" loading="lazy" width="200" height="58">
         </div>
 
         <div class="ecp-leader-actions">
@@ -1598,39 +1414,7 @@ Elder Care Pakistan
 </style>
 
 <!-- JSON-LD: Leadership People -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://eldercarepakistan.org/#faiz-alam-faizi",
-      "name": "Faiz Alam Faizi",
-      "jobTitle": "Founder",
-      "affiliation": {
-        "@type": "Organization",
-        "name": "Elder Care Pakistan",
-        "url": "https://eldercarepakistan.org/"
-      },
-      "image": "https://eldercarepakistan.org/assets/img/about/Faiz%20Alam%20Faizi.jpg",
-      "url": "https://eldercarepakistan.org/About-Us.html"
-    },
-    {
-      "@type": "Person",
-      "@id": "https://eldercarepakistan.org/#m-imran-khan-rana",
-      "name": "M. Imran Khan Rana",
-      "jobTitle": "Executive Director",
-      "affiliation": {
-        "@type": "Organization",
-        "name": "Elder Care Pakistan",
-        "url": "https://eldercarepakistan.org/"
-      },
-      "image": "https://eldercarepakistan.org/assets/img/about/Muhammad%20Imran%20Khan%20Rana.jpg",
-      "url": "https://eldercarepakistan.org/About-Us.html"
-    }
-  ]
-}
-</script>
+
 
 	<section class="ecp-cta-readable-pro" aria-label="Support Elder Care Pakistan today">
   <div class="ecp-cta-bg-shape shape-1"></div>
@@ -1640,93 +1424,39 @@ Elder Care Pakistan
     <div class="ecp-cta-wrap">
 
       <div class="ecp-cta-content">
-        <span class="ecp-cta-badge">Elder Care Pakistan</span>
-
-        <h2>
-          Give Safety, Dignity, and Daily Care
-          <span>to Elderly Lives in Pakistan</span>
-        </h2>
-
-        <p>
-          Your support can help provide medicines, mobility aids, home safety tools,
-          daily essentials, and practical elder care support for senior citizens who
-          deserve comfort, protection, and compassion.
-        </p>
-
-        <div class="ecp-impact-box">
-          <small>Your support can help with</small>
-          <strong id="impactRotator">medicines and urgent care</strong>
-        </div>
+        <span class="ecp-cta-badge">Support Elder Care Pakistan</span>
+        <h2>Help older people live with dignity</h2>
+        <p>Your donation can help fund home care, medicines, mobility aids, and daily essentials for older people in Pakistan.</p>
 
         <div class="ecp-cta-actions">
-          <a href="https://eldercarepakistan.org/Donate-Now1.html" class="ecp-btn ecp-btn-primary">
+          <a href="/Donate-Now1.html#donation-instructions" class="ecp-btn ecp-btn-primary">
             Donate Now
           </a>
 
-          <a href="https://wa.me/923214277856?text=Assalamualaikum%2C%20I%20want%20to%20support%20Elder%20Care%20Pakistan.%20Please%20guide%20me."
-             class="ecp-btn ecp-btn-whatsapp"
-             target="_blank"
-             rel="noopener">
-            WhatsApp Us
-          </a>
-        </div>
-
-        <div class="ecp-trust-points">
-          <span>Transparent Giving</span>
-          <span>Verified Bank Guidance</span>
-          <span>Bank Verification</span>
+          <a href="/Donate-Now.html" class="ecp-btn ecp-sponsor-link">Sponsor an Elder</a>
         </div>
       </div>
 
       <aside class="ecp-bank-card">
-        <span class="ecp-mini-badge">Verified Bank Guidance</span>
-
-        <h3>Donate securely and directly</h3>
-
-        <p>
-          Use the official Elder Care Pakistan bank details below. After payment,
-          receipt confirmation is issued only after bank reconciliation.
-        </p>
-
-        <div class="ecp-bank-list">
-          <div class="ecp-bank-item">
-            <label>Account Title</label>
-            <strong>Elder Care Pakistan</strong>
-          </div>
-
-          <div class="ecp-bank-item highlight">
-            <label>IBAN</label>
-            <strong id="ctaIban">Issued through verified instructions</strong>
-          </div>
-
-          <div class="ecp-bank-item">
-            <label>SWIFT Code</label>
-            <strong>Issued through verified instructions</strong>
-          </div>
-
-          <div class="ecp-bank-item">
-            <label>Account Number</label>
-            <strong>Issued through verified instructions</strong>
-          </div>
-
-          <div class="ecp-bank-item">
-            <label>Bank</label>
-            <strong>Faysal Bank Limited</strong>
-          </div>
-        </div>
-
-        <div class="ecp-bank-actions">
-          <button id="copyIbanBtn" class="ecp-btn ecp-btn-light" type="button">
-            Request Verified Instructions
+        <span class="ecp-mini-badge">Verified bank guidance</span>
+        <h3>Donate with confidence</h3>
+        <dl class="ecp-bank-facts">
+          <div><dt>Account title</dt><dd>Elder Care Pakistan</dd></div>
+          <div><dt>Bank</dt><dd>Faysal Bank Limited</dd></div>
+        </dl>
+        <div class="ecp-home-qr">
+          <button class="ecp-home-qr-image" type="button" aria-label="Enlarge the official donation QR code">
+            <img src="/assets/img/logos/receipt-1782140943666%20%281%29.png" alt="" width="953" height="1044" loading="lazy">
           </button>
-
-          <a href="https://wa.me/923214277856?text=Assalamualaikum%2C%20I%20have%20made%20a%20donation%20to%20Elder%20Care%20Pakistan.%20Please%20guide%20me%20for%20receipt%20confirmation."
-             class="ecp-btn ecp-btn-outline"
-             target="_blank"
-             rel="noopener">
-            Submit Transfer Reference
-          </a>
+          <div>
+            <h4>Scan to donate</h4>
+            <p>Scan with your banking or wallet app.</p>
+            <button class="ecp-home-qr-link" type="button">Tap to enlarge</button>
+          </div>
         </div>
+        <a class="ecp-btn ecp-bank-request" href="/Contact-Us.html#ecpContactForm">Request Verified Instructions</a>
+        <a class="ecp-bank-whatsapp" href="https://wa.me/923214277856">WhatsApp Us</a>
+        <p class="ecp-bank-confirmation">Donations are confirmed after funds are credited and reconciled.</p>
       </aside>
 
     </div>
@@ -2042,58 +1772,7 @@ Elder Care Pakistan
   }
 </style>
 
-<script>
-  (function () {
-    const copyBtn = document.getElementById("copyIbanBtn");
-    const ibanEl = document.getElementById("ctaIban");
-    const impactEl = document.getElementById("impactRotator");
 
-    const rotatingMessages = [
-      "medicines and urgent care",
-      "mobility aids and safer movement",
-      "home safety and comfort support",
-      "daily essentials and hygiene items",
-      "assistive tools and communication support"
-    ];
-
-    let currentIndex = 0;
-
-    function rotateImpactText() {
-      if (!impactEl) return;
-      impactEl.style.opacity = "0";
-      impactEl.style.transform = "translateY(6px)";
-
-      setTimeout(() => {
-        currentIndex = (currentIndex + 1) % rotatingMessages.length;
-        impactEl.textContent = rotatingMessages[currentIndex];
-        impactEl.style.opacity = "1";
-        impactEl.style.transform = "translateY(0)";
-      }, 220);
-    }
-
-    if (impactEl) {
-      setInterval(rotateImpactText, 2600);
-    }
-
-    if (copyBtn && ibanEl) {
-      copyBtn.addEventListener("click", async function () {
-        try {
-          await navigator.clipboard.writeText(ibanEl.textContent.trim());
-          const oldText = copyBtn.textContent;
-          copyBtn.textContent = "Instructions Required";
-          setTimeout(() => {
-            copyBtn.textContent = oldText;
-          }, 1400);
-        } catch (err) {
-          copyBtn.textContent = "Copy Failed";
-          setTimeout(() => {
-            copyBtn.textContent = "Request Verified Instructions";
-          }, 1400);
-        }
-      });
-    }
-  })();
-</script>
 <!-- =========================
 Sticky Donate Now Button + Bank Details Popup
 Elder Care Pakistan
@@ -2144,7 +1823,7 @@ Elder Care Pakistan
     </div>
 
     <div class="ecp-qr-payment" aria-label="QR payment option">
-      <img class="ecp-qr-payment__image" src="assets/img/logos/receipt-1782140943666%20%281%29.png" alt="Elder Care Pakistan QR payment code ending 8326" loading="eager" decoding="async">
+      <img class="ecp-qr-payment__image" src="assets/img/logos/receipt-1782140943666%20%281%29.png" alt="Elder Care Pakistan QR payment code ending 8326" loading="eager" decoding="async" width="953" height="1044">
       <div class="ecp-qr-payment__copy">
         <strong>Scan to donate by QR payment</strong>
         <p>Use this official QR only through your banking or wallet app. Click or tap the QR to enlarge. Keep the app reference; a donation is confirmed after funds are credited and reconciled.</p>
@@ -2506,7 +2185,7 @@ Elder Care Pakistan
 
       <article class="ecp-path-card ecp-featured-card">
         <div class="ecp-path-media">
-          <img src="assets/img/blog/Donate Money to Elder Care Pakistan.jpg" alt="Donate money to support elder care in Pakistan" loading="lazy">
+          <img src="assets/img/blog/Donate Money to Elder Care Pakistan.jpg" alt="Donate money to support elder care in Pakistan" loading="lazy" width="2000" height="1429">
           <span>Most Flexible</span>
         </div>
         <div class="ecp-path-body">
@@ -2518,7 +2197,7 @@ Elder Care Pakistan
 
       <article class="ecp-path-card">
         <div class="ecp-path-media">
-          <img src="assets/img/blog/Donate Land to Elder Care Pakistan.jpg" alt="Donate land for elder care complex" loading="lazy">
+          <img src="assets/img/blog/Donate Land to Elder Care Pakistan.jpg" alt="Donate land for elder care complex" loading="lazy" width="2000" height="1429">
           <span>Legacy Gift</span>
         </div>
         <div class="ecp-path-body">
@@ -2530,7 +2209,7 @@ Elder Care Pakistan
 
       <article class="ecp-path-card">
         <div class="ecp-path-media">
-          <img src="assets/img/blog/Donate Ambulance to Elder Care Pakistan .jpg" alt="Donate ambulance for elder care support" loading="lazy">
+          <img src="assets/img/blog/Donate Ambulance to Elder Care Pakistan .jpg" alt="Donate ambulance for elder care support" loading="lazy" width="2000" height="1429">
           <span>Emergency Care</span>
         </div>
         <div class="ecp-path-body">
@@ -2542,7 +2221,7 @@ Elder Care Pakistan
 
       <article class="ecp-path-card">
         <div class="ecp-path-media">
-          <img src="assets/img/blog/Donate Mobility Aids to Elder Care Pakistan .jpg" alt="Donate mobility aids for elderly people" loading="lazy">
+          <img src="assets/img/blog/Donate Mobility Aids to Elder Care Pakistan .jpg" alt="Donate mobility aids for elderly people" loading="lazy" width="2000" height="1429">
           <span>Mobility Support</span>
         </div>
         <div class="ecp-path-body">
@@ -2554,7 +2233,7 @@ Elder Care Pakistan
 
       <article class="ecp-path-card">
         <div class="ecp-path-media">
-          <img src="assets/img/blog/Donate Assisted Living Devices to Elder Care Pakistan .jpg" alt="Donate assisted living devices for seniors" loading="lazy">
+          <img src="assets/img/blog/Donate Assisted Living Devices to Elder Care Pakistan .jpg" alt="Donate assisted living devices for seniors" loading="lazy" width="2000" height="1429">
           <span>Daily Safety</span>
         </div>
         <div class="ecp-path-body">
@@ -2566,7 +2245,7 @@ Elder Care Pakistan
 
       <article class="ecp-path-card">
         <div class="ecp-path-media">
-          <img src="assets/img/blog/Donate Medication Management to Elder Care Pakistan .jpg" alt="Donate medication management tools for elders" loading="lazy">
+          <img src="assets/img/blog/Donate Medication Management to Elder Care Pakistan .jpg" alt="Donate medication management tools for elders" loading="lazy" width="2000" height="1429">
           <span>Health Support</span>
         </div>
         <div class="ecp-path-body">
@@ -2578,7 +2257,7 @@ Elder Care Pakistan
 
       <article class="ecp-path-card">
         <div class="ecp-path-media">
-          <img src="assets/img/blog/Donate Assistive Devices to Elder Care Pakistan .jpg" alt="Donate assistive devices for elderly support" loading="lazy">
+          <img src="assets/img/blog/Donate Assistive Devices to Elder Care Pakistan .jpg" alt="Donate assistive devices for elderly support" loading="lazy" width="2000" height="1429">
           <span>Independence</span>
         </div>
         <div class="ecp-path-body">
@@ -2590,7 +2269,7 @@ Elder Care Pakistan
 
       <article class="ecp-path-card">
         <div class="ecp-path-media">
-          <img src="assets/img/blog/Donate Accessibility and Safety Equipment to Elder Care Pakistan .jpg" alt="Donate accessibility and safety equipment for elders" loading="lazy">
+          <img src="assets/img/blog/Donate Accessibility and Safety Equipment to Elder Care Pakistan .jpg" alt="Donate accessibility and safety equipment for elders" loading="lazy" width="2000" height="1429">
           <span>Home Safety</span>
         </div>
         <div class="ecp-path-body">
@@ -2602,7 +2281,7 @@ Elder Care Pakistan
 
       <article class="ecp-path-card">
         <div class="ecp-path-media">
-          <img src="assets/img/blog/Donate Other Useful Items to Elder Care Pakistan .jpg" alt="Donate useful daily items for elderly people" loading="lazy">
+          <img src="assets/img/blog/Donate Other Useful Items to Elder Care Pakistan .jpg" alt="Donate useful daily items for elderly people" loading="lazy" width="2000" height="1429">
           <span>Daily Essentials</span>
         </div>
         <div class="ecp-path-body">
@@ -2621,16 +2300,14 @@ Elder Care Pakistan
     <div class="ecp-final-box">
 
       <div class="ecp-final-content">
-        <span class="ecp-badge light">Be a Force for Good</span>
-        <h2>Someone's Parent Needs Care Today</h2>
-        <p>
-          Your donation directly supports senior citizens with care, safety, medicine, mobility, and dignity. Together, we can create a kinder future for those who gave society so much.
-        </p>
+        <span class="ecp-badge light">Support Elder Care Pakistan</span>
+        <h2>Someone’s parent needs care today</h2>
+        <p>Your donation helps older people access home care, medicines, and mobility support.</p>
 
         <div class="ecp-final-actions">
-          <a class="ecp-btn ecp-btn-primary" href="https://eldercarepakistan.org/Donate-Now1.html">Donate Today</a>
-          <a class="ecp-btn ecp-btn-whatsapp" href="https://wa.me/923214277856?text=Assalamualaikum%2C%20I%20want%20to%20donate%20to%20Elder%20Care%20Pakistan.%20Please%20guide%20me." target="_blank" rel="noopener">WhatsApp Us</a>
-          <a class="ecp-btn ecp-btn-outline-light" href="https://eldercarepakistan.org/Contact-Us.html">Contact Us</a>
+          <a class="ecp-btn ecp-btn-primary" href="/Donate-Now1.html#donation-instructions">Donate Today</a>
+          <a class="ecp-btn ecp-btn-outline-light" href="https://wa.me/923214277856?text=Assalamualaikum%2C%20I%20want%20to%20donate%20to%20Elder%20Care%20Pakistan.%20Please%20guide%20me." target="_blank" rel="noopener">WhatsApp Us</a>
+          <a class="ecp-btn ecp-btn-outline-light" href="/Contact-Us.html">Contact Us</a>
         </div>
       </div>
 
@@ -2650,6 +2327,20 @@ Elder Care Pakistan
       </div>
 
     </div>
+    <section class="ecp-find-us" aria-labelledby="find-us-title">
+      <div>
+        <h2 id="find-us-title">
+          <svg viewBox="0 0 24 32" width="28" height="36" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 0 0-12 12c0 6 12 20 12 20s12-14 12-20A12 12 0 0 0 12 0Zm0 6a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/></svg>
+          Find us
+        </h2>
+        <p>Open Google Maps for directions to Elder Care Pakistan.</p>
+        <a class="ecp-btn ecp-find-us-link" href="https://maps.app.goo.gl/aeYvxa1RMdNY2yUu7">Get Directions</a>
+      </div>
+      <a class="ecp-map-preview" href="https://maps.app.goo.gl/aeYvxa1RMdNY2yUu7" aria-label="Open directions in Google Maps">
+        <img src="/assets/img/about/directions-preview.svg" alt="" width="720" height="260" loading="lazy">
+        <span>Illustrated map preview</span>
+      </a>
+    </section>
   </div>
 </section>
 
@@ -2985,13 +2676,6 @@ Elder Care Pakistan
     }
   }
 </style>
- <!-- Location Map Area Start -->
-    <div class="contact-page-map wow fadeInUp delay-0-2s">
-        <div class="our-location">
-            <iframe src="https://maps.app.goo.gl/aeYvxa1RMdNY2yUu7" width="1920" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </div>
-    <!-- Location Map Area End -->
    
    
     <section class="py-70" aria-label="Donation safety and transparency">
@@ -3017,216 +2701,86 @@ Elder Care Pakistan
     </section>
     <!-- ===== Footer (Pro) ===== -->
 
-<section id="donor-answers" class="ecp-aeo-donor-section" aria-label="Donation answers and donor guidance">
+<section id="donor-answers" class="ecp-aeo-donor-section ecp-faq-context">
   <div class="container">
-    <div class="ecp-aeo-donor-grid">
-      <div class="ecp-aeo-donor-copy">
+    <div class="ecp-aeo-donor-copy">
         <span class="ecp-aeo-kicker">Donor answer</span>
         <h2>How donations help older people in Pakistan</h2>
         <p>Elder Care Pakistan supports older people and families through home-based care guidance, medical coordination, mobility support, safety equipment, and daily essentials.</p>
         <p>A donation can help respond to verified needs with dignity: a wheelchair for safer movement, medicine support, a nurse visit, eye-camp care, or practical help for an elder living with limited family support.</p>
       </div>
-      <aside class="ecp-aeo-answer-card" aria-label="Donate call to action">
-        <h3>Ready to help an elder today?</h3>
-        <p>Use the Donate Now page or the official QR payment option. If you need guidance before giving, contact Elder Care Pakistan first so your support can be directed responsibly.</p>
-        <div class="ecp-aeo-actions">
-          <a class="ecp-aeo-btn primary" href="Donate-Now1.html">Donate Now</a>
-          <a class="ecp-aeo-btn secondary" href="https://wa.me/923214277856?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20donate%20to%20Elder%20Care%20Pakistan.%20Please%20guide%20me." target="_blank" rel="noopener">Ask on WhatsApp</a>
-        </div>
+  </div>
+</section>
+<section id="faq" class="ecp-faq-section" aria-labelledby="faq-title">
+  <div class="container">
+    <header class="ecp-faq-heading">
+      <span>Donor FAQ</span>
+      <h2 id="faq-title">Frequently asked questions</h2>
+      <p>Learn how to give, what your donation supports, and how we confirm your payment.</p>
+    </header>
+    <div class="ecp-faq-layout">
+      <div class="ecp-faq-accordion">
+        <details open><summary>How can I donate to Elder Care Pakistan?</summary><div class="ecp-faq-answer"><p>You can use the Donate Now page, scan the official QR code, or contact the team on WhatsApp for verified donation guidance.</p></div></details>
+        <details><summary>What does my donation support?</summary><div class="ecp-faq-answer"><p>Donations can support elder medical needs, mobility aids, home-care coordination, safety items, daily essentials, and community support programmes in Pakistan.</p></div></details>
+        <details><summary>How is donation confirmation handled?</summary><div class="ecp-faq-answer"><p>Donation confirmation is issued after funds are credited and reconciled through the authorised organisational channel.</p></div></details>
+      </div>
+      <aside class="ecp-faq-help" aria-labelledby="faq-help-title">
+        <img src="/assets/img/logos/chat-outline.svg" alt="" width="48" height="48">
+        <h3 id="faq-help-title">Need help donating?</h3>
+        <p>Our team can guide you through the official payment options.</p>
+        <a href="/Donate-Now1.html#donation-instructions">Donate Now</a>
+        <a href="https://wa.me/923214277856" target="_blank" rel="noopener">Ask on WhatsApp</a>
       </aside>
-    </div>
-    <div class="ecp-aeo-faq-list" aria-label="Common donor questions">
-      <details class="ecp-aeo-faq-item" open>
-        <summary>How can I donate to Elder Care Pakistan?</summary>
-        <p>You can use the Donate Now page, scan the official QR code, or contact the team on WhatsApp for verified donation guidance.</p>
-      </details>
-      <details class="ecp-aeo-faq-item">
-        <summary>What does my donation support?</summary>
-        <p>Donations can support elder medical needs, mobility aids, home-care coordination, safety items, daily essentials, and community support programmes in Pakistan.</p>
-      </details>
-      <details class="ecp-aeo-faq-item">
-        <summary>How is donation confirmation handled?</summary>
-        <p>Donation confirmation is issued after funds are credited and reconciled through the authorised organisational channel.</p>
-      </details>
     </div>
   </div>
 </section>
-<footer id="site-footer" class="footer-pro text-white">
+</main>
+<footer id="site-footer" class="footer-pro">
   <div class="container footer-pro__grid">
-    <!-- Brand + Mission -->
-    <section class="f-block f-brand">
-      <a class="f-logo" href="https://eldercarepakistan.org/">
-        <img src="assets/img/logos/logo-white.png" alt="Elder Care Pakistan logo" loading="lazy">
-      </a>
-      <p class="f-mission">
-        Support Elder Care Pakistan. Your gift brings care, safety, and dignity to seniors. Give with heart, change a life today.
-      </p>
-
-      <div class="f-cta">
-        <a class="btn btn-primary" href="https://eldercarepakistan.org/Donate-Now1.html">Donate now</a>
-        <a class="btn btn-outline" href="https://wa.me/923214277856?text=Assalam%20o%20Alaikum%2C%20I%20would%20like%20to%20donate.%20Please%20guide%20me%20with%20the%20next%20steps." target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-
-      <nav class="f-social" aria-label="Social links">
-        <a href="https://www.facebook.com/ElderCarePakistan/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://pk.linkedin.com/in/elder-care-pakistan-71032b4a" aria-label="LinkedIn"><i class="flaticon-linkedin"></i></a>
-      </nav>
+    <section aria-labelledby="footer-brand">
+      <a class="f-logo" href="/"><img src="/assets/img/logos/logo-white.png" alt="Elder Care Pakistan" width="1497" height="498" loading="lazy"></a>
+      <h2 id="footer-brand">Elder Care Pakistan</h2>
+      <p>Practical care and support for older people and their families.</p>
     </section>
-
-    <!-- Quick Links -->
-    <nav class="f-block f-links" aria-label="Quick links">
-      <h5 class="f-title">Explore</h5>
+    <nav aria-labelledby="footer-explore">
+      <h2 id="footer-explore">Explore</h2>
       <ul class="f-list">
-        <li><a href="https://eldercarepakistan.org/">Home</a></li>
-        <li><a href="https://eldercarepakistan.org/Donate-Now1.html">Donate</a></li>
-        <li><a href="https://eldercarepakistan.org/About-Us.html">About us</a></li>
-        <li><a href="https://eldercarepakistan.org/Contact-Us.html">Contact</a></li>
-        <li><a href="https://eldercarepakistan.org/Donate-Now1.html?item=power-wheelchair&amt=5000">Sponsor an item</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/About-Us.html">About us</a></li>
+        <li><a href="/care-support.html">Get care support</a></li>
+        <li><a href="/master-donation-hub.html">Ways to give</a></li>
       </ul>
     </nav>
-
-    <!-- Bank Transfer -->
-    <section class="f-block f-bank" aria-label="Verified donation instructions">
-      <h5 class="f-title">Verified donation instructions</h5>
-      <ul class="bank-list">
-        <li><strong>Account Title</strong><br>Elder Care Pakistan</li>
-        <li><strong>IBAN</strong><br><span id="footerIban">Issued through verified instructions</span> <button class="f-copy" type="button" id="copyFooterIban">Copy</button></li>
-        <li><strong>SWIFT Code</strong><br>Issued through verified instructions</li>
-        <li><strong>Account No.</strong><br>Issued through verified instructions</li>
-        <li><strong>Bank</strong><br>Faysal Bank Limited</li>
+    <nav aria-labelledby="footer-giving">
+      <h2 id="footer-giving">Giving</h2>
+      <ul class="f-list">
+        <li><a href="/Donate-Now1.html#donation-instructions">Verified payment instructions</a></li>
+        <li><a href="/Donate-Now.html">Sponsor an item</a></li>
+        <li><a href="/Contact-Us.html">Ask about a donation</a></li>
       </ul>
-            <div class="ecp-qr-payment" aria-label="QR payment option">
-        <img class="ecp-qr-payment__image" src="assets/img/logos/receipt-1782140943666%20%281%29.png" alt="Elder Care Pakistan QR payment code ending 8326" loading="eager" decoding="async">
-        <div class="ecp-qr-payment__copy">
-          <strong>Scan to donate by QR payment</strong>
-          <p>Use this official QR only through your banking or wallet app. Click or tap the QR to enlarge. Keep the app reference; a donation is confirmed after funds are credited and reconciled.</p>
-        </div>
-      </div>
-      <p class="f-note">Uploading or sharing a transfer receipt does not itself confirm receipt of funds. Confirmation is issued after bank reconciliation.</p>
-    </section>
-
-    <!-- Gallery -->
-    <section class="f-block f-gallery" aria-label="Photo gallery">
-      <h5 class="f-title">In the field</h5>
-      <div class="gallery">
-        <a href="assets/img/footer/gallery-two1.jpg"><img src="assets/img/footer/gallery-two1.jpg" alt="Care visit" loading="lazy"></a>
-        <a href="assets/img/footer/gallery-two2.jpg"><img src="assets/img/footer/gallery-two2.jpg" alt="Mobility support" loading="lazy"></a>
-        <a href="assets/img/footer/gallery-two3.jpg"><img src="assets/img/footer/gallery-two3.jpg" alt="Community clinic" loading="lazy"></a>
-        <a href="assets/img/footer/gallery-two4.jpg"><img src="assets/img/footer/gallery-two4.jpg" alt="Volunteer team" loading="lazy"></a>
-        <a href="assets/img/footer/gallery-two5.jpg"><img src="assets/img/footer/gallery-two5.jpg" alt="Medicine delivery" loading="lazy"></a>
-        <a href="assets/img/footer/gallery-two6.jpg"><img src="assets/img/footer/gallery-two6.jpg" alt="Elder smiles" loading="lazy"></a>
-      </div>
+    </nav>
+    <section aria-labelledby="footer-contact">
+      <h2 id="footer-contact">Contact</h2>
+      <ul class="f-list">
+        <li><a href="tel:+923214277856">+92 321 427 7856</a></li>
+        <li><a href="/Contact-Us.html">Contact and directions</a></li>
+        <li><a href="https://wa.me/923214277856">WhatsApp</a></li>
+        <li><a href="https://www.facebook.com/ElderCarePakistan/">Facebook</a> · <a href="https://pk.linkedin.com/in/elder-care-pakistan-71032b4a">LinkedIn</a></li>
+      </ul>
     </section>
   </div>
-
   <div class="footer-pro__bottom">
     <div class="container bottom__row">
-      <div class="pay">
-        <span>Donate by</span>
-        <img src="assets/img/footer/donate-by.png" alt="Donation methods" loading="lazy">
-      </div>
-      <div class="legal">
-        <p>&copy; <span id="footerYear"></span> Elder Care Pakistan. All rights reserved.</p>
-      </div>
-      <a href="#top" class="to-top" aria-label="Back to top"><i class="flaticon-chevron"></i></a>
+      <p>&copy; <span id="footerYear">2026</span> Elder Care Pakistan</p>
+      <a href="#top" class="to-top">Back to top</a>
     </div>
   </div>
 </footer>
 
-<style>
-  /* ===== Footer Pro ===== */
-  :root{
-    --brand:#0d3b66; --brand2:#1f6feb; --accent:#12b886;
-    --bg:#071a2a; --bg2:#0a2340; --text:#f0f6ff; --muted:#c7d2e0;
-    --card:#0f2d4a; --line:#123a63; --radius:14px; --shadow:0 14px 40px rgba(0,0,0,.25);
-  }
-  .footer-pro{background:linear-gradient(160deg,var(--bg),var(--bg2)); color:var(--text); position:relative; padding:56px 0 0}
-  .container{width:min(1200px,92%);margin:0 auto}
-  .footer-pro__grid{display:grid;grid-template-columns:1.1fr .8fr 1fr 1.1fr;gap:28px;align-items:start}
-
-  .f-block{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
-  .f-title{margin:0 0 10px;font-size:16px;color:#e6f3ff}
-  .f-logo img{height:42px;width:auto}
-  .f-mission{margin:12px 0 14px;color:var(--muted)}
-  .f-cta{display:flex;gap:10px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:10px 14px;border-radius:999px;font-weight:800;text-decoration:none}
-  .btn-primary{background:#ffffff;color:#0d3b66}
-  .btn-outline{background:transparent;border:2px solid #ffffff;color:#ffffff}
-  .btn:hover{opacity:.95}
-
-  .f-social{display:flex;gap:10px;margin-top:12px}
-  .f-social a{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.25);color:#fff}
-  .f-social a:hover{background:rgba(255,255,255,.12)}
-
-  .f-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-  .f-list a{color:#dbeafe;text-decoration:none}
-  .f-list a:hover{text-decoration:underline}
-
-  .f-bank .bank-list{list-style:none;padding:0;margin:0;display:grid;gap:8px;color:#e2ecff}
-  .f-bank .f-copy{margin-left:6px;background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:8px;padding:2px 8px;font-size:12px;cursor:pointer}
-  .f-note{margin:8px 0 0;color:#cfe3ff;font-size:12px}
-
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-  .gallery img{width:100%;height:78px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,.12)}
-
-  .footer-pro__bottom{margin-top:22px;border-top:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.18)}
-  .bottom__row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
-  .pay{display:flex;align-items:center;gap:10px}
-  .pay span{opacity:.85}
-  .pay img{height:24px;width:auto}
-  .legal p{margin:0;color:#dbeafe}
-  .to-top{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none}
-  .to-top:hover{background:rgba(255,255,255,.12)}
-
-  @media (max-width: 1100px){
-    .footer-pro__grid{grid-template-columns:1fr 1fr}
-  }
-  @media (max-width: 640px){
-    .footer-pro__grid{grid-template-columns:1fr}
-    .gallery{grid-template-columns:repeat(3,1fr)}
-  }
-</style>
-
 <!-- JSON-LD: Organization -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "NGO",
-  "name": "Elder Care Pakistan",
-  "url": "https://eldercarepakistan.org/",
-  "logo": "https://eldercarepakistan.org/assets/img/logos/logo-white.png",
-  "sameAs": [
-    "https://www.facebook.com/ElderCarePakistan/",
-    "https://pk.linkedin.com/in/elder-care-pakistan-71032b4a"
-  ],
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "availableLanguage": ["en","ur"],
-    "url": "https://eldercarepakistan.org/Contact-Us.html"
-  }]
-}
-</script>
 
-<script>
-  // Footer helpers
-  document.getElementById('footerYear').textContent = new Date().getFullYear();
 
-  const copyBtn = document.getElementById('copyFooterIban');
-  const ibanEl = document.getElementById('footerIban');
-  if (copyBtn && ibanEl) {
-    copyBtn.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(ibanEl.textContent.trim());
-        copyBtn.textContent = 'Copied';
-        setTimeout(() => copyBtn.textContent = 'Copy', 1200);
-      } catch {
-        copyBtn.textContent = 'Failed';
-        setTimeout(() => copyBtn.textContent = 'Copy', 1200);
-      }
-    });
-  }
-</script>
+
 <!-- ===== Sticky WhatsApp Button ===== -->
 <a id="waFab"
    class="wa-fab"
@@ -3353,8 +2907,8 @@ Elder Care Pakistan
 
         function ensureLightbox() {
           if (lightbox) return lightbox;
-          lightbox = document.createElement('div');
-          lightbox.className = 'ecp-qr-lightbox';
+          lightbox = document.createElement('dialog');
+          lightbox.className = 'ecp-qr-lightbox ecp-home-qr-dialog';
           lightbox.setAttribute('role', 'dialog');
           lightbox.setAttribute('aria-modal', 'true');
           lightbox.setAttribute('aria-label', 'Enlarged QR payment code');
@@ -3363,21 +2917,17 @@ Elder Care Pakistan
           lightbox.addEventListener('click', function (event) {
             if (event.target === lightbox || event.target.className === 'ecp-qr-lightbox__close') closeLightbox();
           });
-          document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') closeLightbox();
-          });
           return lightbox;
         }
 
         function openLightbox() {
-          ensureLightbox().classList.add('is-open');
-          document.body.style.overflow = 'hidden';
+          var dialog = ensureLightbox();
+          if (!dialog.open) dialog.showModal();
         }
 
         function closeLightbox() {
           if (!lightbox) return;
-          lightbox.classList.remove('is-open');
-          document.body.style.overflow = '';
+          if (lightbox.open) lightbox.close();
         }
 
         function bindQrImages() {
@@ -3402,7 +2952,7 @@ Elder Care Pakistan
         }
 
         function bindSponsorQrButtons() {
-          document.querySelectorAll('.ecp-sponsor-qr').forEach(function (button) {
+          document.querySelectorAll('.ecp-sponsor-qr, .ecp-home-qr button').forEach(function (button) {
             if (button.dataset.qrButtonReady === 'true') return;
             button.dataset.qrButtonReady = 'true';
             button.addEventListener('click', function (event) {
@@ -3424,54 +2974,8 @@ Elder Care Pakistan
     </script>
 
 <!-- Sticky QR donate shortcut -->
-<div class="ecp-sticky-qr-donate" data-ecp-sticky-qr-donate aria-label="Quick donation options">
-  <button class="ecp-sticky-qr-donate__qr" type="button" data-ecp-sticky-qr-trigger aria-label="Open enlarged QR payment code" title="Open QR payment code">
-    <img src="assets/img/logos/receipt-1782140943666%20%281%29.png" alt="Elder Care Pakistan QR payment code ending 8326" loading="eager" decoding="async">
-  </button>
-  <a class="ecp-sticky-qr-donate__cta" href="Donate-Now1.html">Donate Now</a>
-</div>
-
-<script id="ecp-sticky-qr-donate-script">
-  (function () {
-    var qrSrc = 'assets/img/logos/receipt-1782140943666%20%281%29.png';
-    var lightbox;
-
-    function ensureLightbox() {
-      if (lightbox) return lightbox;
-      lightbox = document.createElement('div');
-      lightbox.className = 'ecp-sticky-qr-lightbox';
-      lightbox.setAttribute('role', 'dialog');
-      lightbox.setAttribute('aria-modal', 'true');
-      lightbox.setAttribute('aria-label', 'Enlarged QR payment code');
-      lightbox.innerHTML = '<div class="ecp-sticky-qr-lightbox__panel"><button class="ecp-sticky-qr-lightbox__close" type="button" aria-label="Close enlarged QR">&times;</button><img src="' + qrSrc + '" alt="Elder Care Pakistan enlarged QR payment code ending 8326"><p>Scan this official QR through your banking or wallet app. Keep the app reference; confirmation is issued after funds are credited and reconciled.</p></div>';
-      document.body.appendChild(lightbox);
-      lightbox.addEventListener('click', function (event) {
-        if (event.target === lightbox || event.target.classList.contains('ecp-sticky-qr-lightbox__close')) {
-          closeLightbox();
-        }
-      });
-      document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') closeLightbox();
-      });
-      return lightbox;
-    }
-
-    function openLightbox() {
-      ensureLightbox().classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      if (!lightbox) return;
-      lightbox.classList.remove('is-open');
-      document.body.style.overflow = '';
-    }
-
-    document.querySelectorAll('[data-ecp-sticky-qr-trigger]').forEach(function (button) {
-      button.addEventListener('click', openLightbox);
-    });
-  })();
-</script>
+<script defer src="/assets/js/site-refinements.js"></script>
+<a class="ecp-whatsapp-float" href="https://wa.me/923214277856" aria-label="Chat with Elder Care Pakistan on WhatsApp" target="_blank" rel="noopener"><img src="/assets/img/logos/whatsapp.svg" alt="" width="28" height="28"></a>
 </body>
 
 </html>

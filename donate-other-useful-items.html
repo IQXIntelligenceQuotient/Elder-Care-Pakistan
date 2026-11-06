@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -11,13 +11,13 @@
     <meta property="og:title" content="Donate Daily Essentials | Elder Care Pakistan">
     <meta property="og:description" content="Support food, hygiene, comfort, and household essentials for older people and families with verified needs.">
     <meta property="og:url" content="https://eldercarepakistan.org/donate-other-useful-items.html">
-    <meta property="og:image" content="https://eldercarepakistan.org/assets/img/about/elderly%20care%20in%20Pakistan.png">
+    <meta property="og:image" content="https://eldercarepakistan.org/og-image.jpg">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": "NGO",
       "@id": "https://eldercarepakistan.org/#organization",
       "name": "Elder Care Pakistan",
       "url": "https://eldercarepakistan.org/",
@@ -28,8 +28,45 @@
       },
       "telephone": "+92 321 427 7856",
       "sameAs": [
-        "https://www.facebook.com/ElderCarePakistan/"
-      ]
+        "https://www.facebook.com/ElderCarePakistan/",
+        "https://pk.linkedin.com/in/elder-care-pakistan-71032b4a"
+      ],
+      "slogan": "Supporting older people with dignity, care and compassion",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Pakistan"
+        },
+        {
+          "@type": "City",
+          "name": "Lahore"
+        }
+      ],
+      "knowsAbout": [
+        "daily essentials for older people",
+        "elder care in Pakistan",
+        "senior home care",
+        "mobility aids for elders",
+        "medical support for older people",
+        "donations for elderly care"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+923214277856",
+        "contactType": "donor support",
+        "areaServed": "PK",
+        "availableLanguage": [
+          "en",
+          "ur"
+        ]
+      },
+      "potentialAction": {
+        "@type": "DonateAction",
+        "target": "https://eldercarepakistan.org/Donate-Now1.html",
+        "recipient": {
+          "@id": "https://eldercarepakistan.org/#organization"
+        }
+      }
     },
     {
       "@type": "WebSite",
@@ -92,6 +129,37 @@
           "position": 3,
           "name": "Other Useful Items",
           "item": "https://eldercarepakistan.org/donate-other-useful-items.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://eldercarepakistan.org/donate-other-useful-items.html#donor-faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What useful items can I donate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Useful items may include hygiene supplies, bedding, comfort items, nutrition support, and practical daily-care goods."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I ask before sending items?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Contact the team first so items match current needs and can be accepted responsibly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I donate money instead?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. General donations allow Elder Care Pakistan to purchase or direct essentials where needs are most urgent."
+          }
         }
       ]
     }
@@ -407,161 +475,6 @@
       }
     </style>
 
-<style id="ecp-sticky-qr-donate-styles">
-  .ecp-sticky-qr-donate {
-    position: fixed;
-    right: 18px;
-    bottom: 92px;
-    z-index: 9998;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    max-width: calc(100vw - 36px);
-    padding: 8px;
-    border: 1px solid rgba(23, 63, 57, .16);
-    border-radius: 14px;
-    background: #fff;
-    box-shadow: 0 14px 34px rgba(22, 39, 34, .22);
-  }
-
-  .ecp-sticky-qr-donate__qr {
-    width: 56px;
-    height: 56px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px;
-    border: 1px solid #eadfca;
-    border-radius: 10px;
-    background: #fff;
-    cursor: zoom-in;
-    flex: 0 0 auto;
-  }
-
-  .ecp-sticky-qr-donate__qr img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-  }
-
-  .ecp-sticky-qr-donate__cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: 0 16px;
-    border-radius: 10px;
-    background: #173f39;
-    color: #fff !important;
-    font-size: 14px;
-    font-weight: 800;
-    line-height: 1;
-    text-decoration: none !important;
-    white-space: nowrap;
-    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .12);
-  }
-
-  .ecp-sticky-qr-donate__cta:hover,
-  .ecp-sticky-qr-donate__cta:focus {
-    background: #d7a23a;
-    color: #173f39 !important;
-  }
-
-  .ecp-sticky-qr-lightbox {
-    position: fixed;
-    inset: 0;
-    z-index: 100000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    background: rgba(12, 24, 20, .78);
-  }
-
-  .ecp-sticky-qr-lightbox.is-open {
-    display: flex;
-  }
-
-  .ecp-sticky-qr-lightbox__panel {
-    position: relative;
-    max-width: min(92vw, 430px);
-    width: 100%;
-    padding: 22px;
-    border-radius: 16px;
-    background: #fff;
-    color: #20332d;
-    text-align: center;
-    box-shadow: 0 22px 70px rgba(0, 0, 0, .35);
-  }
-
-  .ecp-sticky-qr-lightbox__panel img {
-    width: min(76vw, 320px);
-    height: auto;
-    border: 1px solid #eadfca;
-    border-radius: 12px;
-    background: #fff;
-  }
-
-  .ecp-sticky-qr-lightbox__panel p {
-    margin: 14px 0 0;
-    color: #42554f;
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
-  .ecp-sticky-qr-lightbox__close {
-    position: absolute;
-    top: -12px;
-    right: -12px;
-    width: 36px;
-    height: 36px;
-    border: 0;
-    border-radius: 50%;
-    background: #173f39;
-    color: #fff;
-    font-size: 24px;
-    line-height: 1;
-    cursor: pointer;
-  }
-
-  .ecp-email-status {
-    margin: 12px 0 0;
-    color: #173f39;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .ecp-email-status a {
-    color: #173f39;
-    font-weight: 800;
-    text-decoration: underline;
-  }
-
-  @media (max-width: 575px) {
-    .ecp-sticky-qr-donate {
-      left: 12px;
-      right: 12px;
-      bottom: 76px;
-      justify-content: center;
-      padding: 7px;
-    }
-
-    .ecp-sticky-qr-donate__qr {
-      width: 52px;
-      height: 52px;
-    }
-
-    .ecp-sticky-qr-donate__cta {
-      flex: 1 1 auto;
-      min-width: 0;
-      padding: 0 12px;
-      white-space: normal;
-      text-align: center;
-    }
-  }
-</style>
-
 <style id="ecp-aeo-donor-styles">
   .ecp-aeo-donor-section {
     padding: 58px 0;
@@ -679,110 +592,7 @@
     }
   }
 </style>
-<script type="application/ld+json" id="ecp-aeo-schema">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "NGO",
-      "@id": "https://eldercarepakistan.org/#organization",
-      "name": "Elder Care Pakistan",
-      "url": "https://eldercarepakistan.org/",
-      "slogan": "Supporting older people with dignity, care and compassion",
-      "areaServed": [
-        {
-          "@type": "Country",
-          "name": "Pakistan"
-        },
-        {
-          "@type": "City",
-          "name": "Lahore"
-        }
-      ],
-      "knowsAbout": [
-        "daily essentials for older people",
-        "elder care in Pakistan",
-        "senior home care",
-        "mobility aids for elders",
-        "medical support for older people",
-        "donations for elderly care"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+923214277856",
-        "contactType": "donor support",
-        "areaServed": "PK",
-        "availableLanguage": [
-          "en",
-          "ur"
-        ]
-      },
-      "potentialAction": {
-        "@type": "DonateAction",
-        "target": "https://eldercarepakistan.org/Donate-Now1.html",
-        "recipient": {
-          "@id": "https://eldercarepakistan.org/#organization"
-        }
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://eldercarepakistan.org/donate-other-useful-items.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://eldercarepakistan.org/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Donation Hub",
-          "item": "https://eldercarepakistan.org/master-donation-hub.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Other Useful Items",
-          "item": "https://eldercarepakistan.org/donate-other-useful-items.html"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://eldercarepakistan.org/donate-other-useful-items.html#donor-faq",
-      "inLanguage": "en",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What useful items can I donate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Useful items may include hygiene supplies, bedding, comfort items, nutrition support, and practical daily-care goods."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Should I ask before sending items?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Contact the team first so items match current needs and can be accepted responsibly."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I donate money instead?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. General donations allow Elder Care Pakistan to purchase or direct essentials where needs are most urgent."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
+
   <link rel="stylesheet" href="assets/css/fontawesome.min.css">
   <link rel="stylesheet" href="assets/css/flaticon.min.css">
 
@@ -862,8 +672,12 @@
   @media (max-width:575px){.ecp-breadcrumb{margin-top:132px;font-size:13px}.ecp-breadcrumb ol{padding:10px 0}.ecp-breadcrumb li+li:before{margin:0 7px}}
   @media (max-width:375px){.navbar-area .nav-container{padding-left:25px;padding-right:25px}.navbar-area .nav-right-part .search-bar-btn{margin-right:15px}}
 </style>
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/site-refinements.css">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
-<body class="sc5">
+<body class="sc5" id="top">
+<a class="ecp-skip-link" href="#main-content">Skip to main content</a>
     <!-- search popup start-->
     <div class="td-search-popup" id="td-search-popup">
         <form action="index.html" class="search-form">
@@ -887,7 +701,7 @@
                 <ul class="topbar-right">
                     <li class="social-area">
                         <span>Follow Us - </span>
-                        <a href="https://www.facebook.com/ElderCarePakistan"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.facebook.com/ElderCarePakistan" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     </li>
                 </ul>
             </div>
@@ -897,42 +711,41 @@
         <div class="container nav-container navbar-bg">
             <div class="responsive-mobile-menu">
                 <button class="menu toggle-btn d-block d-lg-none" data-target="#Iitechie_main_menu"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    aria-expanded="false" aria-controls="Iitechie_main_menu" aria-label="Toggle navigation">
                     <span class="icon-left"></span>
                     <span class="icon-right"></span>
                 </button>
             </div>
             <div class="logo">
-                <a href="index.html"><img src="assets/img/logos/logo.png" alt="Elder Care Pakistan"></a>
+                <a href="/"><img src="assets/img/logos/logo.png" alt="Elder Care Pakistan" width="177" height="50"></a>
             </div>
             <div class="nav-right-part nav-right-part-mobile">
-                <a class="search-bar-btn" href="#" aria-label="Open search">
-                    <i class="flaticon-magnifying-glass"></i>
-                </a>
+
             </div>
             <div class="collapse navbar-collapse" id="Iitechie_main_menu">
                 <ul class="navbar-nav menu-open text-lg-end">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="About-Us.html">About Us</a></li>
-                    <li><a href="Donate-Now1.html">Donate Now</a></li>
+
                     <li class="menu-item-has-children">
-                        <a href="#" aria-haspopup="true" aria-expanded="false">Services</a>
+                        <a href="#" aria-haspopup="true" aria-expanded="false">Care Services</a>
                         <ul class="sub-menu">
+                            <li><a href="/care-support.html">Care support overview</a></li>
                             <li><a href="Doctor-Consultation.html">Doctor Consultation</a></li>
                             <li><a href="Physiotherapy-at-Home.html">Physiotherapy at Home</a></li>
-                            <li><a href="Dialysis-at-Home.html">Dialysis at Home</a></li>
+                            <li><a href="Dialysis-at-Home.html">Dialysis referral support</a></li>
                             <li><a href="Nurse-at-Home.html">Nurse at Home</a></li>
                             <li><a href="Lab-Test.html">Lab Test</a></li>
                             <li><a href="Covid-Care.html">Health Support</a></li>
-                            <li><a href="free-eye-camp-for-elders.html">Free Eye Camp</a></li>
+
                         </ul>
                     </li>
                     <li class="menu-item-has-children active">
-                        <a href="#" aria-haspopup="true" aria-expanded="false">Giving</a>
+                        <a href="#" aria-haspopup="true" aria-expanded="false">Ways to Give</a>
                         <ul class="sub-menu">
-                            <li><a href="master-donation-hub.html">Donation Hub</a></li>
-                            <li><a href="Donate-Now.html">Donation Overview</a></li>
-                            <li><a href="Donate-Now1.html">Donation Details</a></li>
+                            <li><a href="master-donation-hub.html">Donation Hub</a></li>                            <li><a href="free-eye-camp-for-elders.html">Free Eye Camp</a></li>
+                            <li><a href="Donate-Now.html">Sponsor an item</a></li>
+                            <li><a href="Donate-Now1.html">Payment instructions</a></li>
                             <li><a href="donate-money.html">Donate Money</a></li>
                             <li><a href="donate-mobility-aids.html">Mobility Aids</a></li>
                             <li><a href="donate-assistive-devices.html">Assistive Devices</a></li>
@@ -948,14 +761,8 @@
                 </ul>
             </div>
             <div class="nav-right-part nav-right-part-desktop">
-                <a class="search-bar-btn" href="#" aria-label="Open search">
-                    <i class="flaticon-magnifying-glass"></i>
-                </a>
-                <div class="dropdown">
-                    <a class="dropdown-toggle" href="Contact-Us.html" aria-label="Contact Elder Care Pakistan">
-                        <i class="flaticon-user-1"></i>
-                    </a>
-                </div>
+
+
                 <a class="btn btn--style-two" href="Donate-Now1.html">Donate Now</a>
             </div>
         </div>
@@ -965,7 +772,7 @@
     <nav class="ecp-breadcrumb" aria-label="Breadcrumb">
         <div class="container">
             <ol>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="master-donation-hub.html">Donation Hub</a></li>
         <li aria-current="page">Other Useful Items</li>
             </ol>
@@ -1018,329 +825,7 @@
   })();
 </script>
 
-<script id="ecp-master-header-script">
-  (function () {
-    var header = document.querySelector('.navbar-area');
-    if (!header || header.dataset.masterHeaderReady === 'true') return;
-    header.dataset.masterHeaderReady = 'true';
-
-    var toggle = header.querySelector('.menu.toggle-btn');
-    var collapse = header.querySelector('.navbar-collapse');
-    if (toggle && collapse) {
-      toggle.addEventListener('click', function () {
-        var isOpen = toggle.classList.toggle('open');
-        collapse.classList.toggle('sopen', isOpen);
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    }
-
-    header.querySelectorAll('.menu-item-has-children > a').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        var submenu = link.parentElement.querySelector('.sub-menu');
-        if (!submenu) return;
-        var isOpen = submenu.classList.toggle('is-open');
-        link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    });
-
-    var overlay = document.getElementById('body-overlay');
-    var popup = document.getElementById('td-search-popup');
-    function closeSearch() {
-      if (overlay) overlay.classList.remove('active');
-      if (popup) popup.classList.remove('active');
-    }
-    document.querySelectorAll('.search-bar-btn').forEach(function (button) {
-      button.addEventListener('click', function (event) {
-        event.preventDefault();
-        if (overlay) overlay.classList.add('active');
-        if (popup) popup.classList.add('active');
-      });
-    });
-    if (overlay) overlay.addEventListener('click', closeSearch);
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeSearch();
-    });
-  })();
-</script>
-
-<script id="ecp-master-header-script">
-  (function () {
-    var header = document.querySelector('.navbar-area');
-    if (!header || header.dataset.masterHeaderReady === 'true') return;
-    header.dataset.masterHeaderReady = 'true';
-
-    var toggle = header.querySelector('.menu.toggle-btn');
-    var collapse = header.querySelector('.navbar-collapse');
-    if (toggle && collapse) {
-      toggle.addEventListener('click', function () {
-        var isOpen = toggle.classList.toggle('open');
-        collapse.classList.toggle('sopen', isOpen);
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    }
-
-    header.querySelectorAll('.menu-item-has-children > a').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        var submenu = link.parentElement.querySelector('.sub-menu');
-        if (!submenu) return;
-        var isOpen = submenu.classList.toggle('is-open');
-        link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    });
-
-    var overlay = document.getElementById('body-overlay');
-    var popup = document.getElementById('td-search-popup');
-    function closeSearch() {
-      if (overlay) overlay.classList.remove('active');
-      if (popup) popup.classList.remove('active');
-    }
-    document.querySelectorAll('.search-bar-btn').forEach(function (button) {
-      button.addEventListener('click', function (event) {
-        event.preventDefault();
-        if (overlay) overlay.classList.add('active');
-        if (popup) popup.classList.add('active');
-      });
-    });
-    if (overlay) overlay.addEventListener('click', closeSearch);
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeSearch();
-    });
-  })();
-</script>
-
-<script id="ecp-master-header-script">
-  (function () {
-    var header = document.querySelector('.navbar-area');
-    if (!header || header.dataset.masterHeaderReady === 'true') return;
-    header.dataset.masterHeaderReady = 'true';
-
-    var toggle = header.querySelector('.menu.toggle-btn');
-    var collapse = header.querySelector('.navbar-collapse');
-    if (toggle && collapse) {
-      toggle.addEventListener('click', function () {
-        var isOpen = toggle.classList.toggle('open');
-        collapse.classList.toggle('sopen', isOpen);
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    }
-
-    header.querySelectorAll('.menu-item-has-children > a').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        var submenu = link.parentElement.querySelector('.sub-menu');
-        if (!submenu) return;
-        var isOpen = submenu.classList.toggle('is-open');
-        link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    });
-
-    var overlay = document.getElementById('body-overlay');
-    var popup = document.getElementById('td-search-popup');
-    function closeSearch() {
-      if (overlay) overlay.classList.remove('active');
-      if (popup) popup.classList.remove('active');
-    }
-    document.querySelectorAll('.search-bar-btn').forEach(function (button) {
-      button.addEventListener('click', function (event) {
-        event.preventDefault();
-        if (overlay) overlay.classList.add('active');
-        if (popup) popup.classList.add('active');
-      });
-    });
-    if (overlay) overlay.addEventListener('click', closeSearch);
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeSearch();
-    });
-  })();
-</script>
-
-<script id="ecp-master-header-script">
-  (function () {
-    var header = document.querySelector('.navbar-area');
-    if (!header || header.dataset.masterHeaderReady === 'true') return;
-    header.dataset.masterHeaderReady = 'true';
-
-    var toggle = header.querySelector('.menu.toggle-btn');
-    var collapse = header.querySelector('.navbar-collapse');
-    if (toggle && collapse) {
-      toggle.addEventListener('click', function () {
-        var isOpen = toggle.classList.toggle('open');
-        collapse.classList.toggle('sopen', isOpen);
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    }
-
-    header.querySelectorAll('.menu-item-has-children > a').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        var submenu = link.parentElement.querySelector('.sub-menu');
-        if (!submenu) return;
-        var isOpen = submenu.classList.toggle('is-open');
-        link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    });
-
-    var overlay = document.getElementById('body-overlay');
-    var popup = document.getElementById('td-search-popup');
-    function closeSearch() {
-      if (overlay) overlay.classList.remove('active');
-      if (popup) popup.classList.remove('active');
-    }
-    document.querySelectorAll('.search-bar-btn').forEach(function (button) {
-      button.addEventListener('click', function (event) {
-        event.preventDefault();
-        if (overlay) overlay.classList.add('active');
-        if (popup) popup.classList.add('active');
-      });
-    });
-    if (overlay) overlay.addEventListener('click', closeSearch);
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeSearch();
-    });
-  })();
-</script>
-
-<script id="ecp-master-header-script">
-  (function () {
-    var header = document.querySelector('.navbar-area');
-    if (!header || header.dataset.masterHeaderReady === 'true') return;
-    header.dataset.masterHeaderReady = 'true';
-
-    var toggle = header.querySelector('.menu.toggle-btn');
-    var collapse = header.querySelector('.navbar-collapse');
-    if (toggle && collapse) {
-      toggle.addEventListener('click', function () {
-        var isOpen = toggle.classList.toggle('open');
-        collapse.classList.toggle('sopen', isOpen);
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    }
-
-    header.querySelectorAll('.menu-item-has-children > a').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        var submenu = link.parentElement.querySelector('.sub-menu');
-        if (!submenu) return;
-        var isOpen = submenu.classList.toggle('is-open');
-        link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    });
-
-    var overlay = document.getElementById('body-overlay');
-    var popup = document.getElementById('td-search-popup');
-    function closeSearch() {
-      if (overlay) overlay.classList.remove('active');
-      if (popup) popup.classList.remove('active');
-    }
-    document.querySelectorAll('.search-bar-btn').forEach(function (button) {
-      button.addEventListener('click', function (event) {
-        event.preventDefault();
-        if (overlay) overlay.classList.add('active');
-        if (popup) popup.classList.add('active');
-      });
-    });
-    if (overlay) overlay.addEventListener('click', closeSearch);
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeSearch();
-    });
-  })();
-</script>
-
-<script id="ecp-master-header-script">
-  (function () {
-    var header = document.querySelector('.navbar-area');
-    if (!header || header.dataset.masterHeaderReady === 'true') return;
-    header.dataset.masterHeaderReady = 'true';
-
-    var toggle = header.querySelector('.menu.toggle-btn');
-    var collapse = header.querySelector('.navbar-collapse');
-    if (toggle && collapse) {
-      toggle.addEventListener('click', function () {
-        var isOpen = toggle.classList.toggle('open');
-        collapse.classList.toggle('sopen', isOpen);
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    }
-
-    header.querySelectorAll('.menu-item-has-children > a').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        var submenu = link.parentElement.querySelector('.sub-menu');
-        if (!submenu) return;
-        var isOpen = submenu.classList.toggle('is-open');
-        link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    });
-
-    var overlay = document.getElementById('body-overlay');
-    var popup = document.getElementById('td-search-popup');
-    function closeSearch() {
-      if (overlay) overlay.classList.remove('active');
-      if (popup) popup.classList.remove('active');
-    }
-    document.querySelectorAll('.search-bar-btn').forEach(function (button) {
-      button.addEventListener('click', function (event) {
-        event.preventDefault();
-        if (overlay) overlay.classList.add('active');
-        if (popup) popup.classList.add('active');
-      });
-    });
-    if (overlay) overlay.addEventListener('click', closeSearch);
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeSearch();
-    });
-  })();
-</script>
-
-<script id="ecp-master-header-script">
-  (function () {
-    var header = document.querySelector('.navbar-area');
-    if (!header || header.dataset.masterHeaderReady === 'true') return;
-    header.dataset.masterHeaderReady = 'true';
-
-    var toggle = header.querySelector('.menu.toggle-btn');
-    var collapse = header.querySelector('.navbar-collapse');
-    if (toggle && collapse) {
-      toggle.addEventListener('click', function () {
-        var isOpen = toggle.classList.toggle('open');
-        collapse.classList.toggle('sopen', isOpen);
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    }
-
-    header.querySelectorAll('.menu-item-has-children > a').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        var submenu = link.parentElement.querySelector('.sub-menu');
-        if (!submenu) return;
-        var isOpen = submenu.classList.toggle('is-open');
-        link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
-    });
-
-    var overlay = document.getElementById('body-overlay');
-    var popup = document.getElementById('td-search-popup');
-    function closeSearch() {
-      if (overlay) overlay.classList.remove('active');
-      if (popup) popup.classList.remove('active');
-    }
-    document.querySelectorAll('.search-bar-btn').forEach(function (button) {
-      button.addEventListener('click', function (event) {
-        event.preventDefault();
-        if (overlay) overlay.classList.add('active');
-        if (popup) popup.classList.add('active');
-      });
-    });
-    if (overlay) overlay.addEventListener('click', closeSearch);
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeSearch();
-    });
-  })();
-</script>
-
-<main>
+<main id="main-content" tabindex="-1">
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -1442,7 +927,7 @@
       <div class="container">
         <article class="ecp-path-card">
           <div class="ecp-path-media">
-            <img src="assets/img/blog/Donate Other Useful Items to Elder Care Pakistan .jpg" alt="Donate useful daily items for elderly people" loading="lazy">
+            <img src="assets/img/blog/Donate Other Useful Items to Elder Care Pakistan .jpg" alt="Donate useful daily items for elderly people" loading="lazy" width="2000" height="1429">
             <span>Daily Essentials</span>
           </div>
           <div class="ecp-path-body">
@@ -1567,41 +1052,7 @@
       </div>
     </section>
 
-    <section id="faq">
-      <div class="container section-head">
-        <span class="badge">Frequently Asked Questions</span>
-        <h2>Common questions about donating other useful items to Elder Care Pakistan</h2>
-        <p>
-          These quick answers help visitors understand how useful daily item support can improve elderly lives in Pakistan.
-        </p>
-      </div>
-      <div class="container faq-grid">
-        <article class="faq-item">
-          <h3>How can we donate other useful items to Elder Care Pakistan?</h3>
-          <p>We can start by contacting Elder Care Pakistan directly on WhatsApp or through the official donation page to discuss donating useful daily items and essentials.</p>
-        </article>
-        <article class="faq-item">
-          <h3>Why are useful daily items important for elderly people?</h3>
-          <p>Because they improve comfort, hygiene, clothing support, routine ease, and everyday dignity in practical ways.</p>
-        </article>
-        <article class="faq-item">
-          <h3>What kinds of useful items can be supported?</h3>
-          <p>Support can include umbrellas, spectacles, clothing, hygiene items, comfort products, and other everyday essentials depending on need.</p>
-        </article>
-        <article class="faq-item">
-          <h3>Can overseas Pakistanis support useful daily items?</h3>
-          <p>Yes. Overseas supporters can contact Elder Care Pakistan on WhatsApp for private guidance and coordination.</p>
-        </article>
-        <article class="faq-item">
-          <h3>Is WhatsApp the best first step?</h3>
-          <p>Yes. Direct communication is often the most practical way to discuss which daily essentials are needed most.</p>
-        </article>
-        <article class="faq-item">
-          <h3>Do useful daily items create practical impact?</h3>
-          <p>Yes. They directly affect how comfortably, cleanly, and confidently an elderly person manages everyday life.</p>
-        </article>
-      </div>
-    </section>
+
 
     <section class="final-cta">
       <div class="container final-box">
@@ -1667,7 +1118,7 @@ Elder Care Pakistan
     </div>
 
     <div class="ecp-qr-payment" aria-label="QR payment option">
-      <img class="ecp-qr-payment__image" src="assets/img/logos/receipt-1782140943666%20%281%29.png" alt="Elder Care Pakistan QR payment code ending 8326" loading="eager" decoding="async">
+      <img class="ecp-qr-payment__image" src="assets/img/logos/receipt-1782140943666%20%281%29.png" alt="Elder Care Pakistan QR payment code ending 8326" loading="eager" decoding="async" width="953" height="1044">
       <div class="ecp-qr-payment__copy">
         <strong>Scan to donate by QR payment</strong>
         <p>Use this official QR only through your banking or wallet app. Click or tap the QR to enlarge. Keep the app reference; a donation is confirmed after funds are credited and reconciled.</p>
@@ -2023,7 +1474,7 @@ Elder Care Pakistan
 
         function ensureLightbox() {
           if (lightbox) return lightbox;
-          lightbox = document.createElement('div');
+          lightbox = document.createElement('dialog');
           lightbox.className = 'ecp-qr-lightbox';
           lightbox.setAttribute('role', 'dialog');
           lightbox.setAttribute('aria-modal', 'true');
@@ -2033,21 +1484,17 @@ Elder Care Pakistan
           lightbox.addEventListener('click', function (event) {
             if (event.target === lightbox || event.target.className === 'ecp-qr-lightbox__close') closeLightbox();
           });
-          document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') closeLightbox();
-          });
           return lightbox;
         }
 
         function openLightbox() {
-          ensureLightbox().classList.add('is-open');
-          document.body.style.overflow = 'hidden';
+          var dialog = ensureLightbox();
+          if (!dialog.open) dialog.showModal();
         }
 
         function closeLightbox() {
           if (!lightbox) return;
-          lightbox.classList.remove('is-open');
-          document.body.style.overflow = '';
+          if (lightbox.open) lightbox.close();
         }
 
         function bindQrImages() {
@@ -2094,267 +1541,95 @@ Elder Care Pakistan
     </script>
 
 <!-- Sticky QR donate shortcut -->
-<div class="ecp-sticky-qr-donate" data-ecp-sticky-qr-donate aria-label="Quick donation options">
-  <button class="ecp-sticky-qr-donate__qr" type="button" data-ecp-sticky-qr-trigger aria-label="Open enlarged QR payment code" title="Open QR payment code">
-    <img src="assets/img/logos/receipt-1782140943666%20%281%29.png" alt="Elder Care Pakistan QR payment code ending 8326" loading="eager" decoding="async">
-  </button>
-  <a class="ecp-sticky-qr-donate__cta" href="Donate-Now1.html">Donate Now</a>
-</div>
-
-<script id="ecp-sticky-qr-donate-script">
-  (function () {
-    var qrSrc = 'assets/img/logos/receipt-1782140943666%20%281%29.png';
-    var lightbox;
-
-    function ensureLightbox() {
-      if (lightbox) return lightbox;
-      lightbox = document.createElement('div');
-      lightbox.className = 'ecp-sticky-qr-lightbox';
-      lightbox.setAttribute('role', 'dialog');
-      lightbox.setAttribute('aria-modal', 'true');
-      lightbox.setAttribute('aria-label', 'Enlarged QR payment code');
-      lightbox.innerHTML = '<div class="ecp-sticky-qr-lightbox__panel"><button class="ecp-sticky-qr-lightbox__close" type="button" aria-label="Close enlarged QR">&times;</button><img src="' + qrSrc + '" alt="Elder Care Pakistan enlarged QR payment code ending 8326"><p>Scan this official QR through your banking or wallet app. Keep the app reference; confirmation is issued after funds are credited and reconciled.</p></div>';
-      document.body.appendChild(lightbox);
-      lightbox.addEventListener('click', function (event) {
-        if (event.target === lightbox || event.target.classList.contains('ecp-sticky-qr-lightbox__close')) {
-          closeLightbox();
-        }
-      });
-      document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') closeLightbox();
-      });
-      return lightbox;
-    }
-
-    function openLightbox() {
-      ensureLightbox().classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      if (!lightbox) return;
-      lightbox.classList.remove('is-open');
-      document.body.style.overflow = '';
-    }
-
-    document.querySelectorAll('[data-ecp-sticky-qr-trigger]').forEach(function (button) {
-      button.addEventListener('click', openLightbox);
-    });
-  })();
-</script>
-
-<section id="donor-answers" class="ecp-aeo-donor-section" aria-label="Donation answers and donor guidance">
+<section id="donor-answers" class="ecp-aeo-donor-section ecp-faq-context">
   <div class="container">
-    <div class="ecp-aeo-donor-grid">
-      <div class="ecp-aeo-donor-copy">
+    <div class="ecp-aeo-donor-copy">
         <span class="ecp-aeo-kicker">Donor answer</span>
         <h2>Donate daily essentials that make care feel personal</h2>
         <p>Useful everyday items can improve comfort, hygiene, routine, and dignity for older people who need practical help.</p>
         <p>A small item can matter deeply when it supports warmth, cleanliness, nutrition, mobility, or personal care for an elder.</p>
       </div>
-      <aside class="ecp-aeo-answer-card" aria-label="Donate call to action">
-        <h3>Ready to help an elder today?</h3>
-        <p>Use the Donate Now page or the official QR payment option. If you need guidance before giving, contact Elder Care Pakistan first so your support can be directed responsibly.</p>
-        <div class="ecp-aeo-actions">
-          <a class="ecp-aeo-btn primary" href="Donate-Now1.html">Donate Now</a>
-          <a class="ecp-aeo-btn secondary" href="https://wa.me/923214277856?text=Assalam%20o%20Alaikum%2C%20I%20want%20to%20donate%20to%20Elder%20Care%20Pakistan.%20Please%20guide%20me." target="_blank" rel="noopener">Ask on WhatsApp</a>
-        </div>
+  </div>
+</section>
+<section id="faq" class="ecp-faq-section" aria-labelledby="faq-title">
+  <div class="container">
+    <header class="ecp-faq-heading">
+      <span>Donor FAQ</span>
+      <h2 id="faq-title">Frequently asked questions</h2>
+      <p>Learn how to give, what your donation supports, and how we confirm your payment.</p>
+    </header>
+    <div class="ecp-faq-layout">
+      <div class="ecp-faq-accordion">
+        <details open><summary>What useful items can I donate?</summary><div class="ecp-faq-answer"><p>Useful items may include hygiene supplies, bedding, comfort items, nutrition support, and practical daily-care goods.</p></div></details>
+        <details><summary>Should I ask before sending items?</summary><div class="ecp-faq-answer"><p>Yes. Contact the team first so items match current needs and can be accepted responsibly.</p></div></details>
+        <details><summary>Can I donate money instead?</summary><div class="ecp-faq-answer"><p>Yes. General donations allow Elder Care Pakistan to purchase or direct essentials where needs are most urgent.</p></div></details>
+        <details><summary>How can we donate other useful items to Elder Care Pakistan?</summary><div class="ecp-faq-answer"><p>We can start by contacting Elder Care Pakistan directly on WhatsApp or through the official donation page to discuss donating useful daily items and essentials.</p></div></details>
+        <details><summary>Why are useful daily items important for elderly people?</summary><div class="ecp-faq-answer"><p>Because they improve comfort, hygiene, clothing support, routine ease, and everyday dignity in practical ways.</p></div></details>
+        <details><summary>What kinds of useful items can be supported?</summary><div class="ecp-faq-answer"><p>Support can include umbrellas, spectacles, clothing, hygiene items, comfort products, and other everyday essentials depending on need.</p></div></details>
+        <details><summary>Can overseas Pakistanis support useful daily items?</summary><div class="ecp-faq-answer"><p>Yes. Overseas supporters can contact Elder Care Pakistan on WhatsApp for private guidance and coordination.</p></div></details>
+        <details><summary>Is WhatsApp the best first step?</summary><div class="ecp-faq-answer"><p>Yes. Direct communication is often the most practical way to discuss which daily essentials are needed most.</p></div></details>
+        <details><summary>Do useful daily items create practical impact?</summary><div class="ecp-faq-answer"><p>Yes. They directly affect how comfortably, cleanly, and confidently an elderly person manages everyday life.</p></div></details>
+      </div>
+      <aside class="ecp-faq-help" aria-labelledby="faq-help-title">
+        <img src="/assets/img/logos/chat-outline.svg" alt="" width="48" height="48">
+        <h3 id="faq-help-title">Need help donating?</h3>
+        <p>Our team can guide you through the official payment options.</p>
+        <a href="/Donate-Now1.html#donation-instructions">Donate Now</a>
+        <a href="https://wa.me/923214277856" target="_blank" rel="noopener">Ask on WhatsApp</a>
       </aside>
-    </div>
-    <div class="ecp-aeo-faq-list" aria-label="Common donor questions">
-      <details class="ecp-aeo-faq-item" open>
-        <summary>What useful items can I donate?</summary>
-        <p>Useful items may include hygiene supplies, bedding, comfort items, nutrition support, and practical daily-care goods.</p>
-      </details>
-      <details class="ecp-aeo-faq-item">
-        <summary>Should I ask before sending items?</summary>
-        <p>Yes. Contact the team first so items match current needs and can be accepted responsibly.</p>
-      </details>
-      <details class="ecp-aeo-faq-item">
-        <summary>Can I donate money instead?</summary>
-        <p>Yes. General donations allow Elder Care Pakistan to purchase or direct essentials where needs are most urgent.</p>
-      </details>
     </div>
   </div>
 </section>
-<footer id="site-footer" class="footer-pro text-white">
+<footer id="site-footer" class="footer-pro">
   <div class="container footer-pro__grid">
-    <!-- Brand + Mission -->
-    <section class="f-block f-brand">
-      <a class="f-logo" href="https://eldercarepakistan.org/">
-        <img src="assets/img/logos/logo-white.png" alt="Elder Care Pakistan logo" loading="lazy">
-      </a>
-      <p class="f-mission">
-        Support Elder Care Pakistan. Your gift brings care, safety, and dignity to seniors. Give with heart, change a life today.
-      </p>
-
-      <div class="f-cta">
-        <a class="btn btn-primary" href="https://eldercarepakistan.org/Donate-Now1.html">Donate now</a>
-        <a class="btn btn-outline" href="https://wa.me/923214277856?text=Assalam%20o%20Alaikum%2C%20I%20would%20like%20to%20donate.%20Please%20guide%20me%20with%20the%20next%20steps." target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-
-      <nav class="f-social" aria-label="Social links">
-        <a href="https://www.facebook.com/ElderCarePakistan/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://pk.linkedin.com/in/elder-care-pakistan-71032b4a" aria-label="LinkedIn"><i class="flaticon-linkedin"></i></a>
-      </nav>
+    <section aria-labelledby="footer-brand">
+      <a class="f-logo" href="/"><img src="/assets/img/logos/logo-white.png" alt="Elder Care Pakistan" width="1497" height="498" loading="lazy"></a>
+      <h2 id="footer-brand">Elder Care Pakistan</h2>
+      <p>Practical care and support for older people and their families.</p>
     </section>
-
-    <!-- Quick Links -->
-    <nav class="f-block f-links" aria-label="Quick links">
-      <h5 class="f-title">Explore</h5>
+    <nav aria-labelledby="footer-explore">
+      <h2 id="footer-explore">Explore</h2>
       <ul class="f-list">
-        <li><a href="https://eldercarepakistan.org/">Home</a></li>
-        <li><a href="https://eldercarepakistan.org/Donate-Now1.html">Donate</a></li>
-        <li><a href="https://eldercarepakistan.org/About-Us.html">About us</a></li>
-        <li><a href="https://eldercarepakistan.org/Contact-Us.html">Contact</a></li>
-        <li><a href="https://eldercarepakistan.org/Donate-Now1.html?item=power-wheelchair&amt=5000">Sponsor an item</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/About-Us.html">About us</a></li>
+        <li><a href="/care-support.html">Get care support</a></li>
+        <li><a href="/master-donation-hub.html">Ways to give</a></li>
       </ul>
     </nav>
-
-    <!-- Bank Transfer -->
-    <section class="f-block f-bank" aria-label="Verified donation instructions">
-      <h5 class="f-title">Verified donation instructions</h5>
-      <ul class="bank-list">
-        <li><strong>Account Title</strong><br>Elder Care Pakistan</li>
-        <li><strong>IBAN</strong><br><span id="footerIban">Issued through verified instructions</span> <button class="f-copy" type="button" id="copyFooterIban">Copy</button></li>
-        <li><strong>SWIFT Code</strong><br>Issued through verified instructions</li>
-        <li><strong>Account No.</strong><br>Issued through verified instructions</li>
-        <li><strong>Bank</strong><br>Faysal Bank Limited</li>
+    <nav aria-labelledby="footer-giving">
+      <h2 id="footer-giving">Giving</h2>
+      <ul class="f-list">
+        <li><a href="/Donate-Now1.html#donation-instructions">Verified payment instructions</a></li>
+        <li><a href="/Donate-Now.html">Sponsor an item</a></li>
+        <li><a href="/Contact-Us.html">Ask about a donation</a></li>
       </ul>
-            <div class="ecp-qr-payment" aria-label="QR payment option">
-        <img class="ecp-qr-payment__image" src="assets/img/logos/receipt-1782140943666%20%281%29.png" alt="Elder Care Pakistan QR payment code ending 8326" loading="eager" decoding="async">
-        <div class="ecp-qr-payment__copy">
-          <strong>Scan to donate by QR payment</strong>
-          <p>Use this official QR only through your banking or wallet app. Click or tap the QR to enlarge. Keep the app reference; a donation is confirmed after funds are credited and reconciled.</p>
-        </div>
-      </div>
-      <p class="f-note">Uploading or sharing a transfer receipt does not itself confirm receipt of funds. Confirmation is issued after bank reconciliation.</p>
-    </section>
-
-    <!-- Gallery -->
-    <section class="f-block f-gallery" aria-label="Photo gallery">
-      <h5 class="f-title">In the field</h5>
-      <div class="gallery">
-        <a href="assets/img/footer/gallery-two1.jpg"><img src="assets/img/footer/gallery-two1.jpg" alt="Care visit" loading="lazy"></a>
-        <a href="assets/img/footer/gallery-two2.jpg"><img src="assets/img/footer/gallery-two2.jpg" alt="Mobility support" loading="lazy"></a>
-        <a href="assets/img/footer/gallery-two3.jpg"><img src="assets/img/footer/gallery-two3.jpg" alt="Community clinic" loading="lazy"></a>
-        <a href="assets/img/footer/gallery-two4.jpg"><img src="assets/img/footer/gallery-two4.jpg" alt="Volunteer team" loading="lazy"></a>
-        <a href="assets/img/footer/gallery-two5.jpg"><img src="assets/img/footer/gallery-two5.jpg" alt="Medicine delivery" loading="lazy"></a>
-        <a href="assets/img/footer/gallery-two6.jpg"><img src="assets/img/footer/gallery-two6.jpg" alt="Elder smiles" loading="lazy"></a>
-      </div>
+    </nav>
+    <section aria-labelledby="footer-contact">
+      <h2 id="footer-contact">Contact</h2>
+      <ul class="f-list">
+        <li><a href="tel:+923214277856">+92 321 427 7856</a></li>
+        <li><a href="/Contact-Us.html">Contact and directions</a></li>
+        <li><a href="https://wa.me/923214277856">WhatsApp</a></li>
+        <li><a href="https://www.facebook.com/ElderCarePakistan/">Facebook</a> · <a href="https://pk.linkedin.com/in/elder-care-pakistan-71032b4a">LinkedIn</a></li>
+      </ul>
     </section>
   </div>
-
   <div class="footer-pro__bottom">
     <div class="container bottom__row">
-      <div class="pay">
-        <span>Donate by</span>
-        <img src="assets/img/footer/donate-by.png" alt="Donation methods" loading="lazy">
-      </div>
-      <div class="legal">
-        <p>&copy; <span id="footerYear"></span> Elder Care Pakistan. All rights reserved.</p>
-      </div>
-      <a href="#top" class="to-top" aria-label="Back to top"><i class="flaticon-chevron"></i></a>
+      <p>&copy; <span id="footerYear">2026</span> Elder Care Pakistan</p>
+      <a href="#top" class="to-top">Back to top</a>
     </div>
   </div>
 </footer>
 
-<style>
-  /* ===== Footer Pro ===== */
-  :root{
-    --brand:#0d3b66; --brand2:#1f6feb; --accent:#12b886;
-    --bg:#071a2a; --bg2:#0a2340; --text:#f0f6ff; --muted:#c7d2e0;
-    --card:#0f2d4a; --line:#123a63; --radius:14px; --shadow:0 14px 40px rgba(0,0,0,.25);
-  }
-  .footer-pro{background:linear-gradient(160deg,var(--bg),var(--bg2)); color:var(--text); position:relative; padding:56px 0 0}
-  .container{width:min(1200px,92%);margin:0 auto}
-  .footer-pro__grid{display:grid;grid-template-columns:1.1fr .8fr 1fr 1.1fr;gap:28px;align-items:start}
-
-  .f-block{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
-  .f-title{margin:0 0 10px;font-size:16px;color:#e6f3ff}
-  .f-logo img{height:42px;width:auto}
-  .f-mission{margin:12px 0 14px;color:var(--muted)}
-  .f-cta{display:flex;gap:10px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:10px 14px;border-radius:999px;font-weight:800;text-decoration:none}
-  .btn-primary{background:#ffffff;color:#0d3b66}
-  .btn-outline{background:transparent;border:2px solid #ffffff;color:#ffffff}
-  .btn:hover{opacity:.95}
-
-  .f-social{display:flex;gap:10px;margin-top:12px}
-  .f-social a{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.25);color:#fff}
-  .f-social a:hover{background:rgba(255,255,255,.12)}
-
-  .f-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-  .f-list a{color:#dbeafe;text-decoration:none}
-  .f-list a:hover{text-decoration:underline}
-
-  .f-bank .bank-list{list-style:none;padding:0;margin:0;display:grid;gap:8px;color:#e2ecff}
-  .f-bank .f-copy{margin-left:6px;background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:8px;padding:2px 8px;font-size:12px;cursor:pointer}
-  .f-note{margin:8px 0 0;color:#cfe3ff;font-size:12px}
-
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-  .gallery img{width:100%;height:78px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,.12)}
-
-  .footer-pro__bottom{margin-top:22px;border-top:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.18)}
-  .bottom__row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
-  .pay{display:flex;align-items:center;gap:10px}
-  .pay span{opacity:.85}
-  .pay img{height:24px;width:auto}
-  .legal p{margin:0;color:#dbeafe}
-  .to-top{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.35);color:#fff;text-decoration:none}
-  .to-top:hover{background:rgba(255,255,255,.12)}
-
-  @media (max-width: 1100px){
-    .footer-pro__grid{grid-template-columns:1fr 1fr}
-  }
-  @media (max-width: 640px){
-    .footer-pro__grid{grid-template-columns:1fr}
-    .gallery{grid-template-columns:repeat(3,1fr)}
-  }
-</style>
-
 <!-- JSON-LD: Organization -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "NGO",
-  "name": "Elder Care Pakistan",
-  "url": "https://eldercarepakistan.org/",
-  "logo": "https://eldercarepakistan.org/assets/img/logos/logo-white.png",
-  "sameAs": [
-    "https://www.facebook.com/ElderCarePakistan/",
-    "https://pk.linkedin.com/in/elder-care-pakistan-71032b4a"
-  ],
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "customer support",
-    "availableLanguage": ["en","ur"],
-    "url": "https://eldercarepakistan.org/Contact-Us.html"
-  }]
-}
-</script>
-
-<script>
-  // Footer helpers
-  document.getElementById('footerYear').textContent = new Date().getFullYear();
-
-  const copyBtn = document.getElementById('copyFooterIban');
-  const ibanEl = document.getElementById('footerIban');
-  if (copyBtn && ibanEl) {
-    copyBtn.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText(ibanEl.textContent.trim());
-        copyBtn.textContent = 'Copied';
-        setTimeout(() => copyBtn.textContent = 'Copy', 1200);
-      } catch {
-        copyBtn.textContent = 'Failed';
-        setTimeout(() => copyBtn.textContent = 'Copy', 1200);
-      }
-    });
-  }
-</script>
 
 
+
+
+
+<script defer src="/assets/js/site-refinements.js"></script>
+<a class="ecp-whatsapp-float" href="https://wa.me/923214277856" aria-label="Chat with Elder Care Pakistan on WhatsApp" target="_blank" rel="noopener"><img src="/assets/img/logos/whatsapp.svg" alt="" width="28" height="28"></a>
 </body>
 </html>
 

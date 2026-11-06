@@ -1,124 +1,109 @@
-<?php require("PHPMailer/PHPMailerAutoload.php");
+<?php
+declare(strict_types=1);
 
+header('Cache-Control: no-store');
+header('X-Robots-Tag: noindex');
+header('X-Content-Type-Options: nosniff');
 
-
-
-$mail = new PHPMailer;
-
-//$mail->SMTPDebug = 3;                               // Enable verbose debug output
-
-$mail->isSMTP();   
-//$mail->Host = 'mail.horizonimplants.com';  // Specify main and backup SMTP servers                                   // Set mailer to use SMTP
-$mail->Host = 'premium185.web-hosting.com';  // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'noreply@horizonimplants.com';                 // SMTP username
-$mail->Password = 'G7HCq!hiJ1U)';                           // SMTP password
-$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465;                                    // TCP port to connect to
-
-
-
-
-
-// ADD your Email and Name
-//$recipientEmail='info@horizonimplants.com';
-//$recipientEmail='horizonimplants1@gmail.com';
-//$recipientEmail='dbashahid@yahoo.com';
-$recipientName='Dr.Fahad Warriach';
-
-//collect the posted variables into local variables before calling $mail = new mailer
-
-$senderName = $_POST['contact-name'];
-$senderEmail = $_POST['contact-email'];
-$senderSubject = 'New Message From ' . $senderName . $senderEmail;
-$senderMessage = $_POST['contact_message'];
-$purpose = $_POST['contact-purpose'];
-
-
-$contact_date = $_POST['contact-date'];
-$contact_time = $_POST['contact-time'];
-$contact_phone = $_POST['contact-phone'];
-
-if ($contact_date==""){$contact_date="N/A";}
-if ($contact_time==""){$contact_time="N/A";}
-if ($contact_phone==""){$contact_phone="N/A";}
-if ($senderMessage==""){$senderMessage="N/A";}
-
-
-//Create a new PHPMailer instance
-//$mail = new PHPMailer();
-
-
-$mail->From = 'noreply@horizonimplants.com';
-$mail->FromName = $recipientName;
-//$mail->addAddress('dbashahid@yahoo.com', 'shahid saleem');     // Add a recipient
-$mail->addAddress('horizonimplants1@gmail.com');               // Name is optional  <------------------ admin receiver email
-$mail->addReplyTo($senderEmail);
-
-
-
-$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
-$mail->isHTML(true);                                  // Set email format to HTML
-
-$mail->Subject = $senderSubject;
-
-//$mail->Body    = 'Name:$senderName<br/>Email: $senderEmail<br/>Suburb: $senderSubject<br/>Message: $senderMessage';
-//$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-
-
-
-$mailbody = "<p>Hello,</p>
-
-   <p> Your horizonimplants website's contact form has been submitted by: </p>
-
-  <p>  Name: $senderName</p>
-	
-  <p>  E-mail: {$senderEmail}</p>
-  
-   <p>  Phone: {$contact_phone}</p>
-	
-	<p>	Department :  $purpose</p>
-	
-	<p>  Contact Date: {$contact_date}</p>
-	
-	<p>  Contact Time: {$contact_time}</p>
-
- <p>   Message:
-    $senderMessage</p>
-
-   
-   
-    ";
-
-$mail->Body=$mailbody;
-
-
-//Set who the message is to be sent from
-//$mail->setFrom($recipientEmail, $recipientName);
-
-//Set an alternative reply-to address
-//$mail->addReplyTo($recipientEmail,$recipientName);
-//Set who the message is to be sent to
-//$mail->addAddress($recipientEmail, $senderName );
-//Set the subject line
-//$mail->Subject = $senderSubject;
-
-//$mail->Body = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
-
-//$mail->MsgHTML($body);
-//$mail->AddAddress($recipientEmail, $recipientName);
-
-//$mail-&gt;AddAttachment("images/phpmailer.gif"); // attachment
-//$mail-&gt;AddAttachment("images/phpmailer_mini.gif"); // attachment
-
-//now make those variables the body of the emails
-
-//$mail->Body="Name: $senderName<br/>Email: $senderEmail<br/>Suburb: $senderSubject<br/>Message: $senderMessage";
-
-if(!$mail->Send()) {
-	echo '<div class="alert alert-danger" role="alert">Error: '. $mail->ErrorInfo.'</div>';
-} else {
-	echo '<div class="alert alert-success" role="alert">Thank you. We will contact you shortly.</div>';
+function respond(int $status, string $message): never
+{
+    http_response_code($status);
+    if (str_contains($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json')) {
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode(['message' => $message], JSON_THROW_ON_ERROR);
+    } else {
+        header('Content-Type: text/html; charset=utf-8');
+        $safe = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
+        echo '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            . '<meta name="viewport" content="width=device-width,initial-scale=1">'
+            . '<title>Contact Elder Care Pakistan</title></head><body><main>'
+            . '<h1>Contact Elder Care Pakistan</h1><p>' . $safe . '</p>'
+            . '<p><a href="/Contact-Us.html#ecpContactForm">Return to the contact form</a></p>'
+            . '<p><a href="mailto:eldercarepakistan@gmail.com">Email Elder Care Pakistan</a></p>'
+            . '</main></body></html>';
+    }
+    exit;
 }
-?>
+
+function field(string $name, int $maxBytes, bool $required = true): string
+{
+    $value = $_POST[$name] ?? '';
+    if (!is_string($value) || strlen($value) > $maxBytes || preg_match('//u', $value) !== 1) {
+        respond(422, 'Check the form fields and shorten any long entries.');
+    }
+    $value = trim($value);
+    if ($required && $value === '') {
+        respond(422, 'Enter your name, email, city, and message.');
+    }
+    return $value;
+}
+
+function takeRateLimitSlot(): void
+{
+    // Keep one bounded counter file outside the document root.
+    $path = sys_get_temp_dir() . '/ecp-contact-' . hash('sha256', __DIR__) . '.json';
+    $file = @fopen($path, 'c+');
+    if ($file === false || !flock($file, LOCK_EX)) {
+        respond(503, 'The contact form is temporarily unavailable. Please use email or WhatsApp.');
+    }
+    $now = time();
+    $window = intdiv($now, 900);
+    $state = json_decode(stream_get_contents($file), true);
+    if (!is_array($state) || ($state['window'] ?? null) !== $window) {
+        $state = ['window' => $window, 'total' => 0, 'clients' => []];
+    }
+    $client = hash('sha256', $_SERVER['REMOTE_ADDR'] ?? 'unknown');
+    $count = $state['clients'][$client] ?? 0;
+    if ($count >= 4 || $state['total'] >= 40) {
+        fclose($file);
+        header('Retry-After: ' . (900 - $now % 900));
+        respond(429, 'Too many messages were attempted. Please wait or contact us by email.');
+    }
+    $state['clients'][$client] = $count + 1;
+    $state['total']++;
+    $data = json_encode($state, JSON_THROW_ON_ERROR);
+    $saved = rewind($file) && fwrite($file, $data) === strlen($data) && ftruncate($file, strlen($data));
+    fclose($file);
+    if (!$saved) {
+        respond(503, 'The contact form is temporarily unavailable. Please use email or WhatsApp.');
+    }
+}
+
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+    header('Allow: POST');
+    respond(405, 'Open the contact page to send a message.');
+}
+if (($_SERVER['HTTP_SEC_FETCH_SITE'] ?? '') === 'cross-site') {
+    respond(403, 'Please submit the message from the contact page.');
+}
+if ((int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > 65536) {
+    respond(413, 'Your message is too large. Please shorten it and try again.');
+}
+if (field('website', 300, false) !== '') {
+    respond(422, 'Please submit the message from the contact page.');
+}
+
+$name = field('name', 400);
+$email = field('email', 254);
+$phone = field('phone_number', 120, false);
+$city = field('city', 320);
+$message = field('message', 12000);
+if (preg_match('/[\r\n]/', $email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    respond(422, 'Enter a valid email address so we can reply.');
+}
+
+takeRateLimitSlot();
+
+$body = "Name: $name\r\nEmail: $email\r\nPhone: $phone\r\nCity: $city\r\n\r\n$message";
+$headers = [
+    'From' => 'info@eldercarepakistan.org',
+    'Reply-To' => $email,
+    'MIME-Version' => '1.0',
+    'Content-Type' => 'text/plain; charset=UTF-8',
+    'Content-Transfer-Encoding' => 'base64',
+];
+if (!@mail('eldercarepakistan@gmail.com', 'Website contact inquiry', chunk_split(base64_encode($body)), $headers)) {
+    error_log('Elder Care Pakistan contact form: mail transport rejected a message.');
+    respond(503, 'We could not send your message. Please try again later or use email or WhatsApp.');
+}
+respond(200, 'Thank you. Your message was submitted for delivery.');
