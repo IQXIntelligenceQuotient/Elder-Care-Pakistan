@@ -31,7 +31,7 @@ On the host, create `eldercare-contact-smtp.ini` **one directory above** the web
 ```ini
 host = smtp.hostinger.com
 port = 465
-username = info@eldercarepakistan.org
+username = care@eldercarepakistan.org
 password = "REPLACE_WITH_MAILBOX_PASSWORD"
 ```
 
