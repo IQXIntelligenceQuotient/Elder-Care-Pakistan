@@ -24,7 +24,7 @@ Deploy the contents of `dist/` to the site document root, including the hidden `
 
 Remove old PHP files from any previous deployment and deploy the new `contact.php` from `dist/`. Rotate or revoke the previously committed SMTP credential in the provider account and review access logs.
 
-The contact form requires PHP 8.1 or later with OpenSSL. It uses authenticated SMTP and sends to `eldercarepakistan@gmail.com`. The authenticated mailbox is the sender, and the visitor’s address is used for replies.
+The contact form requires PHP 8.1 or later with OpenSSL. It uses authenticated SMTP and sends to `eldercarepakistan@gmail.com`, with a blind copy to `faizi.click2print@gmail.com`. The authenticated mailbox is the sender, and the visitor’s address is used for replies.
 
 On the host, create `eldercare-contact-smtp.ini` **one directory above** the website document root. For example, if the site is deployed in `public_html`, put the file beside that directory. Use the mail provider’s settings and an authorized mailbox. For Hostinger Email:
 

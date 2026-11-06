@@ -131,6 +131,7 @@ $mailer->Body = "Name: $name\r\nEmail: $email\r\nPhone: $phone\r\nCity: $city\r\
 try {
     $mailer->setFrom($username, 'Elder Care Pakistan');
     $mailer->addAddress('eldercarepakistan@gmail.com');
+    $mailer->addBCC('faizi.click2print@gmail.com');
     $mailer->addReplyTo($email);
     $mailer->send();
 } catch (MailException $exception) {
