@@ -136,42 +136,58 @@ $details = [
     'City' => $city,
 ];
 $escape = static fn (string $value): string => htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+$safeName = $escape($name);
 $rows = '';
 $plainDetails = '';
 foreach ($details as $label => $value) {
-    $rows .= '<tr><th scope="row" align="left" valign="top" style="padding:8px 12px 8px 0;border-bottom:1px solid #e5e8e3;color:#41544c;font-size:14px;">'
-        . $label . '</th><td valign="top" style="padding:8px 0;border-bottom:1px solid #e5e8e3;overflow-wrap:anywhere;word-break:break-word;">'
+    $rows .= '<tr><th scope="row" align="left" valign="top" style="padding:8px 12px;background-color:#eef3e9;border-bottom:1px solid #dbe3dd;color:#10382c;">'
+        . $label . '</th><td valign="top" style="padding:8px 12px;border-bottom:1px solid #dbe3dd;overflow-wrap:anywhere;word-break:break-word;">'
         . $escape($value) . '</td></tr>';
     $plainDetails .= "$label: $value\r\n";
 }
 $safeMessage = nl2br($escape($message), false);
-$mailer->Subject = "Website contact inquiry | $reference";
-$mailer->isHTML(true);
-$mailer->Body = <<<HTML
+$formatEmail = static function (bool $forVisitor) use ($reference, $name, $safeName, $rows, $plainDetails, $message, $safeMessage): array {
+    $title = $forVisitor ? 'We received your enquiry' : 'New website enquiry';
+    $greeting = $forVisitor ? "Dear $name," : 'Dear Elder Care Pakistan team,';
+    $htmlGreeting = $forVisitor ? "Dear $safeName," : $greeting;
+    $intro = $forVisitor
+        ? 'Thank you for contacting Elder Care Pakistan. Our team will review your enquiry.'
+        : 'A new enquiry was submitted through the Elder Care Pakistan website.';
+    $messageTitle = $forVisitor ? 'Your message' : 'Visitor’s message';
+    $nextStep = $forVisitor
+        ? 'Keep this reference handy. If you have anything to add, reply to this email.'
+        : 'Reply to this email to contact the sender.';
+    $html = <<<HTML
 <!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"></head>
-<body style="margin:0;background-color:#f8f4ec;color:#19362c;font:16px/1.5 Arial,sans-serif;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f8f4ec;">
+<body style="margin:0;background-color:#e1eee7;color:#172820;font:16px/1.5 Arial,sans-serif;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#e1eee7;">
 <tr><td align="center" style="padding:24px 12px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff;border:1px solid #dfdfd4;">
-<tr><td style="padding:20px 24px;border-top:6px solid #10382c;border-bottom:3px solid #e6b54e;">
-    <img src="https://eldercarepakistan.org/assets/img/logos/logo.png" alt="Elder Care Pakistan" width="177" style="display:block;max-width:100%;height:auto;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:640px;background-color:#ffffff;border:1px solid #cfdbd3;border-radius:12px;">
+<tr><td style="padding:24px;border-bottom:4px solid #dfa723;">
+    <img src="https://eldercarepakistan.org/assets/img/logos/logo.png" alt="Elder Care Pakistan" width="220" style="display:block;max-width:100%;height:auto;">
+</td></tr>
+<tr><td style="padding:20px 24px;background-color:#103e30;">
+    <h1 style="margin:0;font-size:28px;line-height:1.2;color:#ffffff;">$title</h1>
 </td></tr>
 <tr><td style="padding:24px;">
-    <h1 style="margin:0 0 8px;font-size:26px;line-height:1.2;color:#10382c;">Website contact inquiry</h1>
-    <p style="margin:0 0 16px;color:#41544c;">Reply to this email to contact the sender.</p>
-    <table width="100%" cellpadding="0" cellspacing="0">$rows</table>
-    <h2 style="margin:24px 0 8px;font-size:18px;color:#10382c;">Message</h2>
-    <div style="padding:16px;background-color:#f8f4ec;overflow-wrap:anywhere;word-break:break-word;">$safeMessage</div>
+    <p style="margin:0 0 8px;font-size:20px;font-weight:bold;color:#10382c;overflow-wrap:anywhere;word-break:break-word;">$htmlGreeting</p>
+    <p style="margin:0 0 16px;">$intro</p>
+    <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #cbd7cf;">$rows</table>
+    <h2 style="margin:24px 0 8px;font-size:20px;color:#10382c;">$messageTitle</h2>
+    <div style="padding:16px;background-color:#faf3e3;border-left:4px solid #dfa723;overflow-wrap:anywhere;word-break:break-word;">$safeMessage</div>
+    <p style="margin:16px 0 0;">$nextStep</p>
 </td></tr>
-<tr><td style="padding:20px 24px;background-color:#10382c;color:#ffffff;font-size:14px;">
-    <strong style="font-size:16px;">Elder Care Pakistan</strong>
-    <p style="margin:8px 0;">Phone <a style="color:#ffffff;" href="tel:+923214277856">+92 321 427 7856</a><br>
-    WhatsApp <a style="color:#ffffff;" href="https://wa.me/923214277856">+92 321 427 7856</a></p>
-    <p style="margin:8px 0;"><strong>Head office</strong><br>11-UGF, Central Plaza, Garden Town, Lahore, Pakistan</p>
-    <p style="margin:8px 0;"><strong>Care home</strong><br>17KM Neelum Valley Road, Pattika, Muzaffarabad, AJK</p>
-    <a style="color:#ffe09a;" href="https://eldercarepakistan.org/Contact-Us.html">View contact page and directions</a>
+<tr><td style="padding:20px 24px;background-color:#e9f2ec;border-top:3px solid #dfa723;border-radius:0 0 11px 11px;color:#10382c;font-size:14px;">
+    <strong style="font-size:20px;">Elder Care Pakistan</strong>
+    <p style="margin:8px 0 16px;">Phone <a style="color:#10382c;" href="tel:+923214277856">+92 321 427 7856</a>
+    &nbsp;·&nbsp; <a style="color:#10382c;" href="https://wa.me/923214277856">WhatsApp</a></p>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="table-layout:fixed;border-top:1px solid #abc5b4;">
+    <tr><td width="50%" valign="top" style="padding:12px 12px 12px 0;"><strong>Head office</strong><br>11-UGF, Central Plaza, Garden Town, Lahore, Pakistan</td>
+    <td width="50%" valign="top" style="padding:12px 0 12px 12px;"><strong>Care home</strong><br>17KM Neelum Valley Road, Pattika, Muzaffarabad, AJK</td></tr>
+    </table>
+    <a style="color:#10382c;font-weight:bold;" href="https://eldercarepakistan.org/Contact-Us.html">View contact page and directions</a>
 </td></tr>
 </table>
 </td></tr>
@@ -179,14 +195,18 @@ $mailer->Body = <<<HTML
 </body>
 </html>
 HTML;
-$mailer->AltBody = "Website contact inquiry\r\nReply to this email to contact the sender.\r\n\r\n"
-    . $plainDetails . "\r\nMessage\r\n$message\r\n\r\n"
-    . "Elder Care Pakistan\r\nPhone: +92 321 427 7856\r\nWhatsApp: https://wa.me/923214277856\r\n"
-    . "Head office: 11-UGF, Central Plaza, Garden Town, Lahore, Pakistan\r\n"
-    . "Care home: 17KM Neelum Valley Road, Pattika, Muzaffarabad, AJK\r\n"
-    . "Contact and directions: https://eldercarepakistan.org/Contact-Us.html";
+    $plain = "$title\r\n\r\n$greeting\r\n$intro\r\n\r\n"
+        . $plainDetails . "\r\n$messageTitle\r\n$message\r\n\r\n$nextStep\r\n\r\n"
+        . "Elder Care Pakistan\r\nPhone: +92 321 427 7856\r\nWhatsApp: https://wa.me/923214277856\r\n"
+        . "Head office: 11-UGF, Central Plaza, Garden Town, Lahore, Pakistan\r\n"
+        . "Care home: 17KM Neelum Valley Road, Pattika, Muzaffarabad, AJK\r\n"
+        . "Contact and directions: https://eldercarepakistan.org/Contact-Us.html";
+    return ["$title | $reference", $html, $plain];
+};
 
 try {
+    $mailer->isHTML(true);
+    [$mailer->Subject, $mailer->Body, $mailer->AltBody] = $formatEmail(false);
     $mailer->setFrom($username, 'Elder Care Pakistan');
     $mailer->addAddress('eldercarepakistan@gmail.com');
     $mailer->addBCC('faizi.click2print@gmail.com');
@@ -196,5 +216,17 @@ try {
     $smtpCode = $mailer->getSMTPInstance()->getError()['smtp_code'] ?? '';
     error_log('Elder Care Pakistan contact form: SMTP failed (code ' . (int) $smtpCode . ').');
     respond(503, 'We could not send your message. Please try again later or use email or WhatsApp.');
+}
+
+try {
+    $mailer->clearAllRecipients();
+    $mailer->clearReplyTos();
+    $mailer->addAddress($email);
+    $mailer->addReplyTo('eldercarepakistan@gmail.com', 'Elder Care Pakistan');
+    [$mailer->Subject, $mailer->Body, $mailer->AltBody] = $formatEmail(true);
+    $mailer->send();
+} catch (MailException $exception) {
+    $smtpCode = $mailer->getSMTPInstance()->getError()['smtp_code'] ?? '';
+    error_log('Elder Care Pakistan contact form: confirmation failed for ' . $reference . ' (code ' . (int) $smtpCode . ').');
 }
 respond(202, 'Thank you. Our mail server accepted your message for delivery.');
