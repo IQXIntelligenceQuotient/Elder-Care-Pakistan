@@ -547,118 +547,62 @@
     </nav>
 
 
-    <!-- page banner start -->
-    <div class="page-banner-area bgs-cover overlay text-white py-165 rpy-125 rmt-65"
-        style="background-image: url(assets/img/background/page-banner.jpg);">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-7 col-lg-8">
-                    <div class="breadcrumb-inner text-center">
-                        <h1 class="page-title">Contact Us</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- page banner end -->
+<section class="ecp-contact-section" aria-labelledby="ecp-contact-title">
+  <div class="ecp-contact-shell">
+    <header class="ecp-contact-heading">
+      <h1 id="ecp-contact-title">Contact Elder Care Pakistan</h1>
+      <p>Ask about elder care, donations or working with us.</p>
+    </header>
 
-<!-- =========================
-Redesigned Contact + Contact Info Section
-Elder Care Pakistan
-========================= -->
-
-<section class="ecp-contact-section">
-  <div class="container">
     <div class="ecp-contact-grid">
-
-      <!-- Left Info Panel -->
-      <div class="ecp-contact-left">
-        <div class="ecp-left-card">
-          <span class="ecp-badge">Need Help</span>
-          <h2>Let's Connect for Elder Care Support</h2>
-          <p class="ecp-lead">
-            Whether you want to donate, ask for guidance, support an elder, or contact our team for collaboration, we are here to listen and assist with care.
-          </p>
-
-          <div class="ecp-feature-stack">
-            <div class="ecp-feature-box">
-              <div class="ecp-feature-number">17+</div>
-              <div class="ecp-feature-text">
-                <strong>Years of Service</strong>
-                <span>Serving elderly lives with commitment and compassion.</span>
-              </div>
-            </div>
-
-            <div class="ecp-feature-box">
-              <div class="ecp-feature-number">9000+</div>
-              <div class="ecp-feature-text">
-                <strong>Elderly People Served</strong>
-                <span>Reaching senior citizens through practical and dignified care.</span>
-              </div>
-            </div>
-
-            <div class="ecp-feature-box">
-              <div class="ecp-feature-icon">&hearts;</div>
-              <div class="ecp-feature-text">
-                <strong>Donate for Parents</strong>
-                <span>Your generosity becomes comfort, care, and hope for elders.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="ecp-quote-box">
-            <p>"Your generosity, their comfort. Be the change with your donation today."</p>
-          </div>
-
-          <div class="ecp-left-actions">
-            <a href="Donate-Now1.html" class="ecp-btn ecp-btn-primary">Donate Now</a>
-            <a href="https://wa.me/923214277856?text=Assalamualaikum%2C%20I%20want%20to%20contact%20Elder%20Care%20Pakistan.%20Please%20guide%20me." class="ecp-btn ecp-btn-outline">WhatsApp Us</a>
-          </div>
+      <div class="ecp-left-card">
+        <h2>How can we help?</h2>
+        <p>Get in touch to ask about our elder care services, make a donation, or explore ways to work with Elder Care Pakistan.</p>
+        <dl class="ecp-contact-stats">
+          <div><dt>Years of service</dt><dd>17+</dd></div>
+          <div><dt>Older people served</dt><dd>9,000+</dd></div>
+        </dl>
+        <div class="ecp-left-actions">
+          <a href="https://wa.me/923214277856?text=Assalamualaikum%2C%20I%20want%20to%20contact%20Elder%20Care%20Pakistan.%20Please%20guide%20me." class="ecp-contact-button"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp us</a>
+          <a href="Donate-Now1.html" class="ecp-contact-button ecp-contact-button-outline">Donate now</a>
         </div>
       </div>
 
-      <!-- Right Form Panel -->
-      <div class="ecp-contact-right">
-        <div class="ecp-form-card">
-          <div class="ecp-form-head">
-            <span class="ecp-mini-badge">Get In Touch</span>
-            <h3>Send us a message</h3>
-            <p>Fill in the form below and our team will get back to you as soon as possible.</p>
-          </div>
-
-          <form id="ecpContactForm" action="/contact.php" method="post" class="ecp-form-grid">
+      <div class="ecp-form-card">
+        <h2>Send us a message</h2>
+        <form id="ecpContactForm" action="/contact.php" method="post" class="ecp-form-grid">
             <div hidden>
               <label for="ecp_website">Leave this field empty</label>
               <input id="ecp_website" name="website" type="text" tabindex="-1" autocomplete="off">
             </div>
             <div class="ecp-form-group">
-              <label for="ecp_name">Your Name</label>
-              <input type="text" id="ecp_name" name="name" class="form-control" placeholder="Your Name" autocomplete="name" maxlength="100" required>
+              <label for="ecp_name">Name</label>
+              <input type="text" id="ecp_name" name="name" class="form-control" placeholder="Your name" autocomplete="name" maxlength="100" required>
             </div>
 
             <div class="ecp-form-group">
-              <label for="ecp_email">Your Email</label>
-              <input type="email" id="ecp_email" name="email" class="form-control" placeholder="Email Address" autocomplete="email" maxlength="254" required>
+              <label for="ecp_email">Email</label>
+              <input type="email" id="ecp_email" name="email" class="form-control" placeholder="Your email" autocomplete="email" maxlength="254" required>
             </div>
 
             <div class="ecp-form-group">
-              <label for="ecp_phone">Phone Number</label>
-              <input type="tel" id="ecp_phone" name="phone_number" class="form-control" placeholder="Phone Number" autocomplete="tel" maxlength="30">
+              <label for="ecp_phone">Phone number (optional)</label>
+              <input type="tel" id="ecp_phone" name="phone_number" class="form-control" placeholder="Your phone number" autocomplete="tel" maxlength="30">
             </div>
 
             <div class="ecp-form-group">
-              <label for="ecp_city">Your City</label>
-              <input type="text" id="ecp_city" name="city" class="form-control" placeholder="City" autocomplete="address-level2" maxlength="80" required>
+              <label for="ecp_city">City</label>
+              <input type="text" id="ecp_city" name="city" class="form-control" placeholder="Your city" autocomplete="address-level2" maxlength="80" required>
             </div>
 
             <div class="ecp-form-group ecp-full-width">
               <label for="ecp_message">Message</label>
-              <textarea id="ecp_message" name="message" class="form-control" rows="5" placeholder="Write your message" maxlength="3000" aria-describedby="ecpContactPrivacy" required></textarea>
-              <p id="ecpContactPrivacy">Please keep your message general and leave out medical records, identity numbers, and bank details.</p>
+              <textarea id="ecp_message" name="message" class="form-control" rows="3" placeholder="Write your message" maxlength="3000" aria-describedby="ecpContactPrivacy" required></textarea>
+              <p id="ecpContactPrivacy">Please leave out medical records, identity numbers and bank details.</p>
             </div>
 
             <div class="ecp-form-group ecp-full-width ecp-submit-wrap">
-              <button type="submit" class="ecp-btn ecp-btn-primary ecp-submit-btn">Send Message</button>
+              <button type="submit" class="ecp-btn ecp-btn-primary ecp-submit-btn">Send message</button>
               <p id="ecpContactFormStatus" class="ecp-email-status" role="status" aria-live="polite"></p>
               <p id="ecpContactFormFallback" hidden>
                 <a id="ecpContactEmailDraft" href="mailto:eldercarepakistan@gmail.com">Open an email draft</a>
@@ -666,438 +610,157 @@ Elder Care Pakistan
               </p>
             </div>
           </form>
-        </div>
       </div>
-
     </div>
-  </div>
-</section>
 
-<section class="ecp-contact-info-section">
-  <div class="container">
-    <div class="ecp-contact-info-grid">
-
-      <div class="ecp-info-card phone-card">
-        <div class="ecp-info-icon">Phone</div>
-        <h4>Phone Numbers</h4>
-        <div class="ecp-info-text">
+    <section class="ecp-contact-info-section" aria-labelledby="ecp-contact-methods">
+      <h2 id="ecp-contact-methods">Call, email or visit us</h2>
+      <div class="ecp-contact-info-grid">
+        <div class="ecp-info-card">
+          <h3><i class="fas fa-phone" aria-hidden="true"></i> Call us</h3>
           <a href="tel:+923214277856">+92 321 427 7856</a>
           <a href="tel:+923469707085">+92 346 970 7085</a>
           <a href="tel:+923228601800">+92 322 860 1800</a>
         </div>
-      </div>
-
-      <div class="ecp-info-card email-card">
-        <div class="ecp-info-icon">Email</div>
-        <h4>Email Address</h4>
-        <div class="ecp-info-text">
-          <a href="mailto:info@eldercarepakistan.org">info@eldercarepakistan.org</a>
-		  <a href="mailto:eldercarepakistan@gmail.com">eldercarepakistan@gmail.com</a>
+        <div class="ecp-info-card">
+          <h3><i class="far fa-envelope" aria-hidden="true"></i> Email us</h3>
+          <a href="mailto:care@eldercarepakistan.org">care@eldercarepakistan.org</a>
+          <a href="mailto:eldercarepakistan@gmail.com">eldercarepakistan@gmail.com</a>
+        </div>
+        <div class="ecp-info-card">
+          <h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Lahore head office</h3>
+          <address>11-UGF, Central Plaza,<br>Garden Town, Lahore, Pakistan</address>
+          <a class="ecp-contact-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=11-UGF%2C%20Central%20Plaza%2C%20Garden%20Town%2C%20Lahore%2C%20Pakistan" aria-label="Get directions to the Lahore head office">Get directions</a>
+        </div>
+        <div class="ecp-info-card">
+          <h3><i class="fas fa-home" aria-hidden="true"></i> Pattika care home</h3>
+          <address>17KM Neelum Valley Road,<br>Pattika, Muzaffarabad, AJK</address>
+          <a class="ecp-contact-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=17KM%20Neelum%20Valley%20Road%2C%20Pattika%2C%20Muzaffarabad%2C%20AJK" aria-label="Get directions to the Pattika care home">Get directions</a>
         </div>
       </div>
-
-      <div class="ecp-info-card address-card">
-        <div class="ecp-info-icon">Map</div>
-        <h4>Office Address</h4>
-        <div class="ecp-info-text">
-          Head Office: 11-UGF, Central Plaza, <br> Garden Town, Lahore - Pakistan
-        </div>
-		<div class="ecp-info-text">
-          Care Home: 17KM Neelum Valley Road, <br> Pattika, Muzaffarabad AJK
-        </div>
-      </div>
-
-    </div>
+    </section>
   </div>
 </section>
 
 <style>
-  :root{
-    --ecp-bg:#f8f4ec;
-    --ecp-card:#ffffff;
-    --ecp-soft:#f6efe3;
-    --ecp-primary:#173f39;
-    --ecp-primary-2:#22594f;
-    --ecp-accent:#d8a13a;
-    --ecp-accent-dark:#9b6a16;
-    --ecp-text:#1f2937;
-    --ecp-muted:#5f6977;
-    --ecp-border:#eadfca;
-    --ecp-shadow:0 22px 55px rgba(23,63,57,.12);
-    --ecp-radius:28px;
+  .ecp-contact-section {
+    --contact-green: #083a2d;
+    --contact-gold: #805200;
+    --contact-radius: 16px;
+    background: #f8f5ee;
+    color: #262e2d;
+    padding: clamp(32px, 5vw, 64px) 0;
   }
-
-  .ecp-contact-section{
-    padding:100px 0 40px;
-    background:
-      radial-gradient(circle at top left, rgba(216,161,58,.14), transparent 26%),
-      linear-gradient(180deg, #fcfaf5 0%, var(--ecp-bg) 100%);
+  .ecp-contact-shell {
+    width: min(100% - clamp(32px, 6vw, 80px), 1440px);
+    margin-inline: auto;
   }
-
-  .ecp-contact-info-section{
-    padding:20px 0 100px;
-    background:var(--ecp-bg);
+  .ecp-contact-section :is(h1, h2, h3) {
+    color: var(--contact-green);
+    line-height: 1.12;
+    margin: 0;
   }
-
-  .container{
-    width:min(1200px,92%);
-    margin:0 auto;
+  .ecp-contact-heading { margin-bottom: clamp(24px, 3vw, 40px); }
+  .ecp-contact-heading h1 { font-size: clamp(2.125rem, 5vw, 4.25rem); }
+  .ecp-contact-heading p { margin: 8px 0 0; font-size: clamp(1.125rem, 2vw, 1.625rem); }
+  .ecp-contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 24px;
   }
-
-  .ecp-contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:28px;
-    align-items:stretch;
+  .ecp-left-card, .ecp-form-card, .ecp-info-card {
+    border-radius: var(--contact-radius);
+    padding: clamp(20px, 2.4vw, 36px);
   }
-
-  .ecp-left-card,
-  .ecp-form-card,
-  .ecp-info-card{
-    background:var(--ecp-card);
-    border:1px solid rgba(23,63,57,.08);
-    border-radius:var(--ecp-radius);
-    box-shadow:var(--ecp-shadow);
+  .ecp-left-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    background: #e8eddd;
   }
-
-  .ecp-left-card{
-    padding:34px;
-    height:100%;
+  .ecp-form-card { background: #fff; border: 1px solid #e1ded5; }
+  .ecp-contact-section h2 { font-size: clamp(1.65rem, 3vw, 2.75rem); }
+  .ecp-left-card > p { margin: 0; font-size: clamp(1rem, 1.6vw, 1.25rem); }
+  .ecp-contact-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0;
+    color: var(--contact-green);
   }
-
-  .ecp-form-card{
-    padding:34px;
-    height:100%;
+  .ecp-contact-stats > div { display: flex; flex-direction: column-reverse; padding-right: 12px; }
+  .ecp-contact-stats > div + div { border-left: 1px solid #9eba9f; padding: 0 0 0 16px; }
+  .ecp-contact-stats dt { font-weight: 500; }
+  .ecp-contact-stats dd { font-size: clamp(1.75rem, 4vw, 3.5rem); font-weight: 800; line-height: 1.1; margin: 0; }
+  .ecp-left-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .ecp-left-actions > a { flex: 1 1 140px; }
+  .ecp-contact-section .ecp-contact-button,
+  .ecp-contact-section .ecp-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 10px 16px;
+    background: var(--contact-green);
+    color: #fff;
+    border: 1px solid var(--contact-green);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
   }
-
-  .ecp-badge,
-  .ecp-mini-badge{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:10px 16px;
-    border-radius:999px;
-    font-size:12px;
-    font-weight:900;
-    text-transform:uppercase;
-    letter-spacing:.05em;
+  .ecp-contact-section .ecp-contact-button-outline { background: transparent; border-color: var(--contact-gold); color: var(--contact-gold); }
+  .ecp-contact-button .fab { font-size: 1.4em; }
+  .ecp-contact-section .ecp-submit-btn { width: 100%; }
+  .ecp-contact-section .ecp-submit-btn:disabled { opacity: .7; cursor: wait; }
+  .ecp-contact-section :is(a, button, input, textarea):focus-visible { outline: 2px solid #805200; outline-offset: 3px; }
+  .ecp-contact-section .ecp-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 20px;
+    margin-top: 16px;
   }
-
-  .ecp-badge{
-    background:rgba(216,161,58,.14);
-    color:var(--ecp-accent-dark);
-    margin-bottom:16px;
+  .ecp-contact-section .ecp-form-group { min-width: 0; }
+  .ecp-contact-section .ecp-full-width { grid-column: 1 / -1; }
+  .ecp-contact-section label { display: block; margin-bottom: 4px; font-weight: 700; color: var(--contact-green); }
+  .ecp-contact-section .form-control {
+    width: 100%;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid #89958f;
+    border-radius: 8px;
+    background: #fff;
+    color: #202827;
+    font-size: 1rem;
   }
-
-  .ecp-mini-badge{
-    background:rgba(23,63,57,.08);
-    color:var(--ecp-primary);
-    margin-bottom:14px;
+  .ecp-contact-section textarea.form-control { min-height: 88px; resize: vertical; }
+  .ecp-contact-section #ecpContactPrivacy { margin: 4px 0 0; font-size: .875rem; }
+  .ecp-contact-section :is(#ecpContactFormStatus, #ecpContactFormFallback) { margin: 8px 0 0; }
+  .ecp-contact-section #ecpContactFormStatus:empty { margin: 0; }
+  .ecp-contact-info-section { margin-top: clamp(28px, 4vw, 48px); }
+  .ecp-contact-info-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+  .ecp-info-card { padding: clamp(16px, 2vw, 28px); border: 1px solid #d6d2c8; background: #fbf9f4; overflow-wrap: anywhere; }
+  .ecp-info-card h3 { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: clamp(1.125rem, 1.5vw, 1.375rem); }
+  .ecp-info-card h3 i { flex-shrink: 0; }
+  .ecp-info-card address { margin: 0; }
+  .ecp-info-card a { display: block; color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .ecp-info-card a + a { margin-top: 4px; }
+  .ecp-info-card .ecp-contact-directions { display: flex; align-items: center; min-height: 44px; margin-top: 4px; color: var(--contact-gold); font-weight: 700; }
+  @media (hover: hover) {
+    .ecp-contact-section .ecp-contact-button:hover,
+    .ecp-contact-section .ecp-submit-btn:hover { background: #13523f; color: #fff; }
+    .ecp-contact-section .ecp-contact-button-outline:hover { background: #f7edcf; color: var(--contact-gold); }
   }
-
-  .ecp-left-card h2{
-    margin:0 0 14px;
-    color:var(--ecp-primary);
-    font-size:clamp(2rem,4vw,3.3rem);
-    line-height:1.1;
-    font-weight:900;
-    letter-spacing:-.04em;
+  @media (max-width: 1000px) {
+    .ecp-contact-info-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
-
-  .ecp-lead{
-    margin:0;
-    color:var(--ecp-muted);
-    font-size:17px;
-    line-height:1.85;
-    max-width:650px;
+  @media (max-width: 760px) {
+    .ecp-contact-grid { grid-template-columns: 1fr; }
   }
-
-  .ecp-feature-stack{
-    display:grid;
-    gap:16px;
-    margin-top:26px;
-  }
-
-  .ecp-feature-box{
-    display:flex;
-    gap:16px;
-    align-items:flex-start;
-    padding:18px;
-    border-radius:22px;
-    background:var(--ecp-soft);
-    border:1px solid var(--ecp-border);
-  }
-
-  .ecp-feature-number{
-    min-width:74px;
-    height:74px;
-    border-radius:20px;
-    display:grid;
-    place-items:center;
-    background:var(--ecp-primary);
-    color:#fff;
-    font-size:24px;
-    font-weight:900;
-    box-shadow:0 12px 28px rgba(23,63,57,.14);
-  }
-
-  .ecp-feature-icon{
-    min-width:74px;
-    height:74px;
-    border-radius:20px;
-    display:grid;
-    place-items:center;
-    background:linear-gradient(135deg, var(--ecp-accent), #f1c45e);
-    color:#1d1607;
-    font-size:28px;
-    font-weight:900;
-    box-shadow:0 12px 28px rgba(216,161,58,.18);
-  }
-
-  .ecp-feature-text strong{
-    display:block;
-    color:var(--ecp-primary);
-    font-size:20px;
-    margin-bottom:4px;
-    line-height:1.25;
-  }
-
-  .ecp-feature-text span{
-    color:var(--ecp-muted);
-    font-size:15px;
-    line-height:1.75;
-  }
-
-  .ecp-quote-box{
-    margin-top:20px;
-    padding:18px 20px;
-    border-left:5px solid var(--ecp-accent);
-    border-radius:0 18px 18px 0;
-    background:#fbf4e8;
-  }
-
-  .ecp-quote-box p{
-    margin:0;
-    color:var(--ecp-primary);
-    font-size:17px;
-    line-height:1.8;
-    font-weight:700;
-  }
-
-  .ecp-left-actions{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:24px;
-  }
-
-  .ecp-form-head h3{
-    margin:0 0 10px;
-    color:var(--ecp-primary);
-    font-size:32px;
-    line-height:1.2;
-    font-weight:900;
-  }
-
-  .ecp-form-head p{
-    margin:0 0 22px;
-    color:var(--ecp-muted);
-    font-size:16px;
-    line-height:1.8;
-  }
-
-  .ecp-form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-  }
-
-  .ecp-form-group{
-    display:flex;
-    flex-direction:column;
-  }
-
-  .ecp-form-group label{
-    margin-bottom:8px;
-    color:var(--ecp-primary);
-    font-size:14px;
-    font-weight:800;
-  }
-
-  .ecp-form-group .form-control{
-    width:100%;
-    min-height:54px;
-    padding:14px 16px;
-    border-radius:16px;
-    border:1px solid rgba(23,63,57,.14);
-    background:#fff;
-    color:var(--ecp-text);
-    font-size:15px;
-    outline:none;
-    transition:.2s ease;
-  }
-
-  .ecp-form-group textarea.form-control{
-    min-height:130px;
-    resize:vertical;
-  }
-
-  .ecp-form-group .form-control:focus{
-    border-color:var(--ecp-primary);
-    box-shadow:0 0 0 4px rgba(23,63,57,.08);
-  }
-
-  .ecp-full-width{
-    grid-column:1 / -1;
-  }
-
-  .ecp-submit-wrap{
-    margin-top:4px;
-  }
-
-  .ecp-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    min-height:54px;
-    padding:0 22px;
-    border-radius:999px;
-    font-weight:900;
-    text-decoration:none;
-    border:1px solid transparent;
-    transition:.25s ease;
-    cursor:pointer;
-  }
-
-  .ecp-btn:hover{
-    transform:translateY(-2px);
-  }
-
-  .ecp-btn-primary{
-    background:linear-gradient(135deg, var(--ecp-accent), #f1c45e);
-    color:#1d1607;
-    box-shadow:0 14px 30px rgba(216,161,58,.22);
-  }
-
-  .ecp-btn-outline{
-    background:#fff;
-    color:var(--ecp-primary);
-    border-color:rgba(23,63,57,.16);
-  }
-
-  .ecp-submit-btn{
-    min-width:220px;
-  }
-
-  .ecp-contact-info-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-  }
-
-  .ecp-info-card{
-    padding:28px 24px;
-    text-align:left;
-    transition:.25s ease;
-  }
-
-  .ecp-info-card:hover{
-    transform:translateY(-6px);
-  }
-
-  .ecp-info-icon{
-    width:66px;
-    height:66px;
-    border-radius:20px;
-    display:grid;
-    place-items:center;
-    font-size:28px;
-    margin-bottom:18px;
-    box-shadow:0 12px 28px rgba(23,63,57,.10);
-  }
-
-  .phone-card .ecp-info-icon{
-    background:#e8f7ef;
-  }
-
-  .email-card .ecp-info-icon{
-    background:#fff3d9;
-  }
-
-  .address-card .ecp-info-icon{
-    background:#eef4ff;
-  }
-
-  .ecp-info-card h4{
-    margin:0 0 10px;
-    color:var(--ecp-primary);
-    font-size:24px;
-    line-height:1.2;
-  }
-
-  .ecp-info-text,
-  .ecp-info-text a{
-    color:var(--ecp-muted);
-    font-size:16px;
-    line-height:1.9;
-    text-decoration:none;
-    display:block;
-  }
-
-  .ecp-info-text a:hover{
-    color:var(--ecp-primary);
-  }
-
-  @media(max-width:992px){
-    .ecp-contact-grid,
-    .ecp-contact-info-grid,
-    .ecp-form-grid{
-      grid-template-columns:1fr;
-    }
-
-    .ecp-submit-btn{
-      width:100%;
-    }
-  }
-
-  @media(max-width:640px){
-    .ecp-contact-section{
-      padding:72px 0 24px;
-    }
-
-    .ecp-contact-info-section{
-      padding:16px 0 72px;
-    }
-
-    .ecp-left-card,
-    .ecp-form-card,
-    .ecp-info-card{
-      padding:22px;
-      border-radius:22px;
-    }
-
-    .ecp-left-card h2{
-      font-size:2rem;
-    }
-
-    .ecp-form-head h3{
-      font-size:26px;
-    }
-
-    .ecp-feature-box{
-      padding:16px;
-    }
-
-    .ecp-feature-number,
-    .ecp-feature-icon{
-      min-width:60px;
-      height:60px;
-      font-size:22px;
-      border-radius:16px;
-    }
+  @media (max-width: 480px) {
+    .ecp-contact-section .ecp-form-grid, .ecp-contact-info-grid { grid-template-columns: 1fr; }
   }
 </style>
-
 
     <!-- Location Map Area Start -->
     <div class="contact-page-map wow fadeInUp delay-0-2s">
