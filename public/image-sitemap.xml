@@ -4,11 +4,6 @@
     <loc>https://eldercarepakistan.org/</loc>
     <image:image><image:loc>https://eldercarepakistan.org/assets/img/logos/logo.png</image:loc></image:image>
     <image:image><image:loc>https://eldercarepakistan.org/assets/img/hero/hero-two.jpg</image:loc></image:image>
-    <image:image><image:loc>https://eldercarepakistan.org/assets/img/about/about-three-right.jpg</image:loc></image:image>
-    <image:image><image:loc>https://eldercarepakistan.org/assets/img/about/Faiz%20Alam%20Faizi.jpg</image:loc></image:image>
-    <image:image><image:loc>https://eldercarepakistan.org/assets/img/about/elderly%20care%20in%20Pakistan.png</image:loc></image:image>
-    <image:image><image:loc>https://eldercarepakistan.org/assets/img/about/Muhammad%20Imran%20Khan%20Rana.jpg</image:loc></image:image>
-    <image:image><image:loc>https://eldercarepakistan.org/assets/img/about/imran%20khan.png</image:loc></image:image>
     <image:image><image:loc>https://eldercarepakistan.org/assets/img/blog/Donate%20Money%20to%20Elder%20Care%20Pakistan.jpg</image:loc></image:image>
     <image:image><image:loc>https://eldercarepakistan.org/assets/img/blog/Donate%20Land%20to%20Elder%20Care%20Pakistan.jpg</image:loc></image:image>
     <image:image><image:loc>https://eldercarepakistan.org/assets/img/blog/Donate%20Ambulance%20to%20Elder%20Care%20Pakistan%20.jpg</image:loc></image:image>
@@ -23,6 +18,10 @@
     <loc>https://eldercarepakistan.org/About-Us.html</loc>
     <image:image><image:loc>https://eldercarepakistan.org/assets/img/logos/logo.png</image:loc></image:image>
     <image:image><image:loc>https://eldercarepakistan.org/assets/img/about/about-three-right.jpg</image:loc></image:image>
+    <image:image><image:loc>https://eldercarepakistan.org/assets/img/about/Faiz%20Alam%20Faizi.jpg</image:loc></image:image>
+    <image:image><image:loc>https://eldercarepakistan.org/assets/img/about/elderly%20care%20in%20Pakistan.png</image:loc></image:image>
+    <image:image><image:loc>https://eldercarepakistan.org/assets/img/about/Muhammad%20Imran%20Khan%20Rana.jpg</image:loc></image:image>
+    <image:image><image:loc>https://eldercarepakistan.org/assets/img/about/imran%20khan.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://eldercarepakistan.org/care-support.html</loc>
