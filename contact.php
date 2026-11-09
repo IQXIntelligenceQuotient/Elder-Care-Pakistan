@@ -95,17 +95,21 @@ if (preg_match('/[\r\n]/', $email) || !filter_var($email, FILTER_VALIDATE_EMAIL)
     respond(422, 'Enter a valid email address so we can reply.');
 }
 
+$captureDirectory = PHP_SAPI === 'cli-server' ? (getenv('ECP_CONTACT_CAPTURE') ?: '') : '';
 $configPath = dirname(__DIR__) . '/eldercare-contact-smtp.ini';
-$config = @parse_ini_file($configPath, false, INI_SCANNER_RAW);
+$config = $captureDirectory === '' ? @parse_ini_file($configPath, false, INI_SCANNER_RAW) : [];
 $host = $config['host'] ?? '';
-$username = $config['username'] ?? '';
+$username = $config['username'] ?? ($captureDirectory !== '' ? 'care@eldercarepakistan.org' : '');
 $password = $config['password'] ?? '';
 $port = (int) ($config['port'] ?? 465);
-if (!filter_var($host, FILTER_VALIDATE_DOMAIN, FILTER_FLAG_HOSTNAME)
+if ($captureDirectory === '' && (!filter_var($host, FILTER_VALIDATE_DOMAIN, FILTER_FLAG_HOSTNAME)
     || !filter_var($username, FILTER_VALIDATE_EMAIL)
-    || $password === '' || !in_array($port, [465, 587], true)
-    || !extension_loaded('openssl')) {
+    || $password === '' || $password === 'REPLACE_WITH_MAILBOX_PASSWORD' || !in_array($port, [465, 587], true)
+    || !extension_loaded('openssl'))) {
     error_log('Elder Care Pakistan contact form: SMTP is not configured.');
+    if (PHP_SAPI === 'cli-server') {
+        respond(503, 'Local email delivery needs valid SMTP settings in the private configuration file.');
+    }
     respond(503, 'The contact form is temporarily unavailable. Please use email or WhatsApp.');
 }
 
@@ -116,7 +120,9 @@ require_once __DIR__ . '/PHPMailer.php';
 require_once __DIR__ . '/SMTP.php';
 
 $mailer = new PHPMailer(true);
-$mailer->isSMTP();
+if ($captureDirectory === '') {
+    $mailer->isSMTP();
+}
 $mailer->Host = $host;
 $mailer->Port = $port;
 $mailer->SMTPSecure = $port === 465 ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
@@ -204,6 +210,19 @@ HTML;
     return ["$title | $reference", $html, $plain];
 };
 
+$sendEmail = static function (string $kind) use ($mailer, $captureDirectory, $reference): void {
+    if ($captureDirectory === '') {
+        $mailer->send();
+        return;
+    }
+    $mailer->preSend();
+    $path = $captureDirectory . DIRECTORY_SEPARATOR . "$reference-$kind.eml";
+    $message = $mailer->getSentMIMEMessage();
+    if (@file_put_contents($path, $message, LOCK_EX) !== strlen($message)) {
+        throw new MailException('Could not save the local email preview.');
+    }
+};
+
 try {
     $mailer->isHTML(true);
     [$mailer->Subject, $mailer->Body, $mailer->AltBody] = $formatEmail(false);
@@ -211,7 +230,7 @@ try {
     $mailer->addAddress('eldercarepakistan@gmail.com');
     $mailer->addBCC('faizi.click2print@gmail.com');
     $mailer->addReplyTo($email);
-    $mailer->send();
+    $sendEmail('team');
 } catch (MailException $exception) {
     $smtpCode = $mailer->getSMTPInstance()->getError()['smtp_code'] ?? '';
     error_log('Elder Care Pakistan contact form: SMTP failed (code ' . (int) $smtpCode . ').');
@@ -224,9 +243,14 @@ try {
     $mailer->addAddress($email);
     $mailer->addReplyTo('eldercarepakistan@gmail.com', 'Elder Care Pakistan');
     [$mailer->Subject, $mailer->Body, $mailer->AltBody] = $formatEmail(true);
-    $mailer->send();
+    $sendEmail('visitor');
 } catch (MailException $exception) {
     $smtpCode = $mailer->getSMTPInstance()->getError()['smtp_code'] ?? '';
     error_log('Elder Care Pakistan contact form: confirmation failed for ' . $reference . ' (code ' . (int) $smtpCode . ').');
+    if ($captureDirectory !== '') {
+        respond(503, 'The local visitor confirmation could not be saved.');
+    }
 }
-respond(202, 'Thank you. Our mail server accepted your message for delivery.');
+respond(202, $captureDirectory !== ''
+    ? "Local test complete. Team and visitor emails were saved as previews. Reference: $reference."
+    : 'Thank you. Our mail server accepted your message for delivery.');

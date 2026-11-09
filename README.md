@@ -37,6 +37,8 @@ password = "REPLACE_WITH_MAILBOX_PASSWORD"
 
 Restrict the file to the hosting account and keep it outside Git and the web root. Port 465 uses implicit TLS and port 587 uses STARTTLS. If SMTP is unconfigured or rejects the message, the form returns `503` and keeps the entered text in the browser. A `202` means the SMTP server accepted the message for delivery. Verify arrival in Gmail after deployment.
 
-Vite serves the website preview. To exercise the PHP endpoint locally after building, use `php -S 127.0.0.1:8080 -t dist` with a local test SMTP service. The international giving form still prepares an email draft.
+Run `npm run dev` and open `http://localhost:5173/Contact-Us.html` to test the contact form. Vite starts PHP on loopback using `ECP_PHP_BINARY`, the default XAMPP location on Windows if present, or `php` from PATH. Restart Vite after changing these settings. By default, the terminal prints a temporary directory containing the team and visitor `.eml` files. Use sample data because these previews contain the submitted message.
+
+To send real emails from localhost, save the private SMTP file one directory above the repository root and restart Vite. Vite uses SMTP when the file exists and saves previews when it is absent. Set `ECP_LOCAL_SMTP=0` before starting Vite to force previews, or `ECP_LOCAL_SMTP=1` to require SMTP. The team receives the enquiry first, then the visitor gets a separate confirmation at the submitted address. Both use the same reference. The static `npm run preview` command does not run PHP.
 
 After deployment, check the homepage and care hub with JavaScript disabled, verify the sitemap files on the production domain, and test the hosting edge with verified crawler requests.
