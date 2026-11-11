@@ -6,7 +6,7 @@ import { transform } from 'esbuild'
 // Keep dynamic plugin states while removing theme selectors unused by public pages.
 const htmlFiles = (await readdir('dist')).filter(name => name.endsWith('.html'))
 const content = await Promise.all(htmlFiles.map(async name => ({
-  raw: await readFile('dist/' + name, 'utf8'),
+  raw: (await readFile('dist/' + name, 'utf8')).replace(/<style data-ecp-home-style="[^"]+">[\s\S]*?<\/style>/g, ''),
   extension: 'html',
 })))
 const replacements = new Map()
@@ -50,13 +50,26 @@ for (const directory of ['css', 'js']) {
   }
 }
 const homeStyles = ['bootstrap.min.css', 'fontawesome.min.css', 'spacing.min.css', 'style.css']
-const homeCss = (await Promise.all(homeStyles.map(name =>
-  readFile(replacements.get('assets/css/' + name), 'utf8')))).join('\n')
-const homeHash = createHash('sha256').update(homeCss).digest('hex').slice(0, 12)
-const homeStylesheet = 'assets/css/home-core.' + homeHash + '.css'
-await writeFile(homeStylesheet, homeCss)
-await writeFile('dist/' + homeStylesheet, homeCss)
-replacements.set('assets/css/home-core.css', homeStylesheet)
+const homeMarkup = (await readFile('dist/index.html', 'utf8')).replace(/<style\b[^>]*>[\s\S]*?<\/style>/g, '')
+async function homeStylesFor(names) {
+  const source = (await Promise.all(names.map(name => readFile(replacements.get('assets/css/' + name), 'utf8')))).join('\n')
+  const [result] = await new PurgeCSS().purge({
+    content: [{ raw: homeMarkup, extension: 'html' }, 'assets/js/home.js', 'assets/js/site-refinements.js'],
+    css: [{ raw: source }],
+    safelist: {
+      standard: ['body', 'html', 'dialog', 'backdrop'],
+      greedy: [/ecp-nav/, /ecp-home-qr/, /ecp-qr-lightbox/, /sticky/, /active/, /open/],
+    },
+  })
+  // Inline CSS resolves relative URLs against the document, so rebase font URLs.
+  return result.css.replace(/url\((["']?)([^"')]+)\1\)/g, (match, quote, path) => {
+    if (/^(?:data:|https?:|#)/.test(path)) return match
+    const url = new URL(path, 'https://eldercarepakistan.org/assets/css/')
+    return 'url("' + url.pathname + url.search + url.hash + '")'
+  })
+}
+const homeCoreCss = await homeStylesFor(homeStyles)
+const homeRefinementsCss = await homeStylesFor(['site-refinements.css'])
 
 for (const name of htmlFiles) {
   let html = await readFile('dist/' + name, 'utf8')
@@ -68,12 +81,14 @@ for (const name of htmlFiles) {
     })
   if (name === 'index.html') {
     let inserted = false
-    html = html.replace(/<link rel="stylesheet" href="\/assets\/css\/(?:bootstrap\.min|fontawesome\.min|spacing\.min|style|home-core)\.[a-f0-9]{12}\.css">/g,
+    html = html.replace(/<link rel="stylesheet" href="\/assets\/css\/(?:bootstrap\.min|fontawesome\.min|spacing\.min|style|home-core)\.[a-f0-9]{12}\.css">|<style data-ecp-home-style="core">[\s\S]*?<\/style>/g,
       () => {
         if (inserted) return ''
         inserted = true
-        return '<link rel="stylesheet" href="/' + homeStylesheet + '">'
+        return '<style data-ecp-home-style="core">' + homeCoreCss + '</style>'
       })
+    html = html.replace(/<link rel="stylesheet" href="\/assets\/css\/site-refinements\.[a-f0-9]{12}\.css">|<style data-ecp-home-style="refinements">[\s\S]*?<\/style>/g,
+      () => '<style data-ecp-home-style="refinements">' + homeRefinementsCss + '</style>')
     html = html.replace(/^[ \t]+$/gm, '')
   }
   await writeFile('dist/' + name, html)
