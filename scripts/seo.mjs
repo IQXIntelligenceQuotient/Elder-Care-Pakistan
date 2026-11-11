@@ -74,6 +74,7 @@ if (!mode || mode === 'llms') {
     '- [Contact and addresses](' + origin + '/Contact-Us.html): Confirm availability with the organisation. The contact page lists a Lahore head office and a Pattika, Muzaffarabad AJK care home address.', '',
     '## About and giving', '',
     '- [About](' + origin + '/About-Us.html): Organisation mission and leadership.',
+    '- [Elder care blogs](' + origin + '/blogs.html): Eight family guides linking to original articles on Tralionex Insights.',
     '- [Ways to give](' + origin + '/master-donation-hub.html): Donation options and gifts in kind.',
     '- [Donation and overseas transfer guidance](' + origin + '/Donate-Now1.html): Ask the organisation for verified instructions and receipt guidance.',
   ].join('\n'))

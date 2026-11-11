@@ -13,6 +13,26 @@
 .navbar-area .menu.toggle-btn { min-width: 44px; min-height: 44px; }
 .ecp-care-menu-trigger { display: none; }
 .ecp-care-menu { display: contents; }
+.ecp-blog-section { padding-block: clamp(2rem, 5vw, 4rem); background: #f8f4ec; color: #173f39; }
+.ecp-blog-heading { max-width: 56rem; margin-bottom: 2rem; }
+.ecp-blog-heading h1, .ecp-blog-heading h2 { color: #073e30; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.15; margin-block: 1rem; }
+.ecp-blog-heading p { margin-bottom: 1rem; }
+.ecp-blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.ecp-blog-card { display: flex; flex-direction: column; min-width: 0; padding: 1.5rem; background: #fff; border: 1px solid #dfd8c9; border-radius: 1rem; }
+.ecp-blog-card time { color: #4c5e53; font-size: .875rem; }
+.ecp-blog-card h2, .ecp-blog-card h3 { color: #073e30; font-size: 1.35rem; line-height: 1.3; margin: .75rem 0; }
+.ecp-blog-card h2 a, .ecp-blog-card h3 a { color: inherit; }
+.ecp-blog-card p { color: #37473f; }
+main .ecp-blog-read { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; color: #073e30; text-decoration: underline; text-underline-offset: .2em; font-weight: 700; }
+.ecp-blog-card .ecp-blog-read { margin-top: auto; }
+.ecp-blog-faq { max-width: 52rem; margin-top: 3rem; }
+.ecp-blog-faq details { padding: 1rem; border-bottom: 1px solid #d3d8cd; }
+.ecp-blog-faq summary { cursor: pointer; font-weight: 700; }
+.ecp-site-credit { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .5rem 2rem; padding: 1rem 1.5rem; background: #092a24; color: #fff; text-align: center; font-size: .875rem; }
+.ecp-site-credit a { display: inline-block; padding-block: .5rem; color: #fff; text-decoration: underline; text-underline-offset: .2em; }
+.ecp-blog-section a:focus-visible, .ecp-site-credit a:focus-visible { outline: 2px solid #bf8c2c; outline-offset: 3px; }
+@media (max-width: 991.98px) { .ecp-blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .ecp-blog-grid { grid-template-columns: 1fr; } }
 .ecp-nav-locked { overflow: hidden; overscroll-behavior: none; }
 .ecp-nav-locked body {
   position: fixed;

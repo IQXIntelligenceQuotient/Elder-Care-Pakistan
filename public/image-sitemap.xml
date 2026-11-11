@@ -25,6 +25,10 @@
     <image:image><image:loc>https://eldercarepakistan.org/assets/img/about/free-eye-camp.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://eldercarepakistan.org/blogs.html</loc>
+    <image:image><image:loc>https://eldercarepakistan.org/assets/img/logos/logo.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://eldercarepakistan.org/care-support.html</loc>
     <image:image><image:loc>https://eldercarepakistan.org/assets/img/about/about-three-right.jpg</image:loc></image:image>
   </url>
