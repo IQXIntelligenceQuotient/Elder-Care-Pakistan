@@ -43,7 +43,7 @@ export function renderCarePage() {
       h('link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }),
       h('link', { rel: 'manifest', href: '/site.webmanifest' }),
       h('link', { rel: 'stylesheet', href: '/assets/css/care-support.css' }),
-      h('link', { rel: 'stylesheet', href: '/assets/css/site-refinements.css?v=blogs-20261111' }),
+      h('link', { rel: 'stylesheet', href: '/assets/css/site-refinements.css?v=blog-images-20261111' }),
       h('script', { defer: true, src: '/assets/js/site-refinements.js?v=nav-drawer' }),
       ...Object.entries({ type: 'website', title, description, url, image: origin + '/assets/img/about/elder-care-pakistan-social.jpg' }).map(([name, content]) => h('meta', { property: 'og:' + name, content })),
       h('meta', { name: 'twitter:card', content: 'summary_large_image' }),
