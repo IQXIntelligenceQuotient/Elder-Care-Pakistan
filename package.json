@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run prerender && npm run generate:seo && node scripts/verify-site.mjs",
+    "build": "npm run prerender && node scripts/optimize-assets.mjs && npm run generate:seo && node scripts/verify-site.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "prerender": "node scripts/prerender.mjs",
@@ -19,7 +19,9 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "esbuild": "^0.28.2",
     "eslint": "^9.39.0",
+    "purgecss": "^9.1.0",
     "vite": "^7.2.0"
   }
 }

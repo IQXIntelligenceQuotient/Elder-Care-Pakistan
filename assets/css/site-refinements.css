@@ -11,6 +11,10 @@
 .ecp-skip-link:focus { transform: none; }
 :focus-visible { outline: 3px solid #126954; outline-offset: 3px; }
 .navbar-area .menu.toggle-btn { min-width: 44px; min-height: 44px; }
+main a.btn { background-color: #173f39; color: #fff; }
+@media (hover: hover) and (pointer: fine) {
+  main a.btn:hover { background-color: #22594f; color: #fff; }
+}
 .ecp-care-menu-trigger { display: none; }
 .ecp-care-menu { display: contents; }
 .ecp-blog-section { padding-block: clamp(2rem, 5vw, 4rem); background: #f8f4ec; color: #173f39; }
