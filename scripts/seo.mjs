@@ -18,6 +18,7 @@ const pageUrl = (name) => origin + pathFor(name)
 async function publish(name, content) {
   await mkdir('public', { recursive: true })
   await writeFile('public/' + name, content + '\n', 'utf8')
+  await writeFile(name, content + '\n', 'utf8')
   if (existsSync('dist')) await writeFile('dist/' + name, content + '\n', 'utf8')
 }
 
@@ -32,7 +33,6 @@ if (!mode || mode === 'sitemap') {
   })
   const sitemap = [xml, '<urlset xmlns="' + sitemapNs + '">', ...entries, '</urlset>'].join('\n')
   await publish('sitemap.xml', sitemap)
-  await writeFile('sitemap.xml', sitemap + '\n', 'utf8')
   await publish('sitemap-index.xml', [
     xml, '<sitemapindex xmlns="' + sitemapNs + '">',
     ...['sitemap.xml', 'image-sitemap.xml'].map((file) => '  <sitemap><loc>' + origin + '/' + file + '</loc></sitemap>'),

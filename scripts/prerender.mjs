@@ -7,6 +7,10 @@ process.chdir(fileURLToPath(project))
 // Serve the same generated HTML from the repository root and the deploy folder.
 const carePage = 'care-support.html'
 await writeFile(carePage, renderCarePage() + '\n', 'utf8')
+// Publish discovery files and app icons for Hostinger's repository-root deployment.
+for (const entry of await readdir('public')) {
+  await cp('public/' + entry, entry, { recursive: true })
+}
 await rm(new URL('dist/', project), { recursive: true, force: true })
 await mkdir('dist')
 await Promise.all([
