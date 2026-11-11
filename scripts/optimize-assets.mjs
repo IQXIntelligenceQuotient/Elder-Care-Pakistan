@@ -11,7 +11,8 @@ const content = await Promise.all(htmlFiles.map(async name => ({
 })))
 const replacements = new Map()
 for (const directory of ['css', 'js']) {
-  const names = (await readdir('dist/assets/' + directory)).filter(name => name.endsWith('.' + directory))
+  const names = (await readdir('dist/assets/' + directory)).filter(name =>
+    name.endsWith('.' + directory) && !/\.[a-f0-9]{12}\.(?:css|js)$/.test(name))
   for (const name of names) {
     const original = 'assets/' + directory + '/' + name
     let source = await readFile('dist/' + original, 'utf8')
@@ -35,6 +36,8 @@ for (const directory of ['css', 'js']) {
     const hash = createHash('sha256').update(result.code).digest('hex').slice(0, 12)
     const output = original.replace(/\.(css|js)$/, '.' + hash + '.$1')
     await writeFile('dist/' + output, result.code)
+    // Hostinger Git also serves the repository root, so publish the same assets there.
+    await writeFile(output, result.code)
     replacements.set(original, output)
   }
 }
@@ -42,8 +45,10 @@ for (const name of htmlFiles) {
   let html = await readFile('dist/' + name, 'utf8')
   html = html.replace(/((?:href|src)=["'])(\/?assets\/(?:css|js)\/[^"'?]+)(?:\?[^"']*)?(["'])/g,
     (match, prefix, path, quote) => {
-      const replacement = replacements.get(path.replace(/^\//, ''))
+      const original = path.replace(/^\//, '').replace(/\.[a-f0-9]{12}(?=\.(?:css|js)$)/, '')
+      const replacement = replacements.get(original)
       return replacement ? prefix + '/' + replacement + quote : match
     })
   await writeFile('dist/' + name, html)
+  await writeFile(name, html)
 }
