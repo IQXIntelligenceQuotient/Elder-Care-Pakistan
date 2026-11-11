@@ -48,7 +48,7 @@ if (!mode || mode === 'images') {
     for (const [, src] of markup.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/gi)) {
       const path = src.replace(/^\//, '')
       if (!/^assets\/img\/(?:about|blog|hero|causes|logos|optimized)\//i.test(path)) continue
-      if (/receipt-|donation-qr-preview|signature|logo-white|whatsapp\.svg|directions-preview\.svg|chat-outline\.svg/i.test(path) || !existsSync(decodeURIComponent(path))) continue
+      if (/receipt-|donation-qr-preview|signature|logo-white|(?:whatsapp|chat-outline)(?:\.[a-f0-9]{12})?\.svg|directions-preview\.svg/i.test(path) || !existsSync(decodeURIComponent(path))) continue
       images.add(new URL(path, origin + '/').href)
     }
     if (!images.size) continue

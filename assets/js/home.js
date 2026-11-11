@@ -5,9 +5,20 @@ document.querySelectorAll('.navbar-area .menu-item-has-children > a').forEach(li
 const navbar = document.querySelector('.navbar');
 const backToTop = document.querySelector('.back-to-top');
 let scheduled = false;
+let wasSticky = false;
+let wasBackToTopVisible = false;
 function updateScrollControls() {
-  navbar?.classList.toggle('sticky-active', window.scrollY >= 445);
-  if (backToTop) backToTop.hidden = window.scrollY <= 1000;
+  const scrollY = window.scrollY;
+  const isSticky = scrollY >= 445;
+  const isBackToTopVisible = scrollY > 1000;
+  if (isSticky !== wasSticky) {
+    navbar?.classList.toggle('sticky-active', isSticky);
+    wasSticky = isSticky;
+  }
+  if (backToTop && isBackToTopVisible !== wasBackToTopVisible) {
+    backToTop.style.display = isBackToTopVisible ? 'block' : 'none';
+    wasBackToTopVisible = isBackToTopVisible;
+  }
   scheduled = false;
 }
 window.addEventListener('scroll', () => {
@@ -21,4 +32,4 @@ backToTop?.addEventListener('click', () => {
     behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
   });
 });
-updateScrollControls();
+window.addEventListener('pageshow', updateScrollControls);
